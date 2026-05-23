@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+
+  <style>
+    /* ===== ROOT VARIABLES ===== */
+    :root {
+      --hue: 356;
+      --sat: 87%;
+      --light: 70%;
+
+      --primary-color: hsl(var(--hue) var(--sat) var(--light));
+      --white-color: hsl(var(--hue) 45% 98%);
+      --dark-color: hsl(var(--hue) 26% 12%);
+      --logo-color: hsl(0 0% 100%);
+      --color-01: hsl(var(--hue) var(--sat) var(--light));
+      --color-02: hsl(var(--hue) 45% 98%);
+      --color-03: hsl(var(--hue) 26% 12%);
+      --color-04: hsl(var(--hue) 0% 62%);
+      --color-05: hsl(var(--hue) 26% 12%);
+      --body-color: hsl(250 26% 12%);
+      --hover-color: hsl(var(--hue) var(--sat) calc(var(--light) - 7%));
+      --bottom-nav-bg: hsl(var(--hue) 32% 25% / .65);
+      --card-bg: linear-gradient(120deg, hsl(var(--hue) 54% 74% / .15), hsl(var(--hue) 54% 74% / .05));
+      --modal-backdrop-bg: hsl(var(--hue) 54% 74% / .1);
+      --footer-bg: linear-gradient(360deg, hsl(var(--hue) 54% 74% / .15), hsl(var(--hue) 54% 74% / .1));
+      --scrollbar-color: hsl(var(--hue) 25% 20%);
+      --scrollbar-thumb: hsl(var(--hue) var(--sat) var(--light));
+      --scrollbar-thumb-hover: hsl(var(--hue) var(--sat) calc(var(--light) - 7%));
+      --body-font-family: "Inter", sans-serif;
+      --heading-font: var(--body-font-family);
+      --h1-font-size: 2.85rem;
+      --h2-font-size: 2.25rem;
+      --h3-font-size: 1.97rem;
+      --h4-font-size: 1.43rem;
+      --h5-font-size: 1.13rem;
+      --xlarge-font-size: 1.48rem;
+      --large-font-size: 1.23rem;
+      --medium-font-size: 1.18rem;
+      --base-font-size: 1.1rem;
+      --small-font-size: 1.07rem;
+      --tiny-font-size: .98rem;
+      --font-light: 300;
+      --font-regular: 400;
+      --font-medium: 500;
+      --font-semi-bold: 600;
+      --font-bold: 700;
+      --z-minus: -1;
+      --z-base: 0;
+      --z-low: 1;
+      --z-high: 10;
+      --z-content: 100;
+      --z-tooltip: 1000;
+      --z-fixed: 1100;
+      --z-overlay: 1110;
+      --z-modal: 1990;
+      --z-max: 9999;
+      --section-gap: 5rem;
+      --card-radius: 16px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body-font-family);
+      background-color: var(--body-color);
+      color: var(--color-04);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .sue-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .sue-logo a {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--body-font-family);
+      font-size: 2.6rem;
+      font-weight: var(--font-semi-bold);
+      letter-spacing: -3px;
+      line-height: 1;
+    }
+
+    .sue-logo a span {
+      line-height: 1;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--scrollbar-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 99px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-thumb-hover);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 256px;
+      pointer-events: none;
+      z-index: var(--z-minus);
+      opacity: .4;
+    }
+
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: var(--z-minus);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+
+    .blob-1 {
+      width: 600px;
+      height: 600px;
+      background: hsl(var(--hue) var(--sat) var(--light) / .07);
+      top: -200px;
+      right: -100px;
+    }
+
+    .blob-2 {
+      width: 400px;
+      height: 400px;
+      background: hsl(var(--hue) 60% 50% / .05);
+      bottom: 10%;
+      left: -150px;
+      animation-delay: -9s;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+
+      to {
+        transform: translate(40px, 30px) scale(1.08);
+      }
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8.5rem 2rem 6rem;
+    }
+
+    .progress-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: transparent;
+      opacity: 0;
+      transition: top .3s ease, opacity .3s ease;
+      pointer-events: none;
+      z-index: 1099;
+    }
+
+    .sue-header.shrink+.progress-wrap {
+      opacity: 1;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #C00000;
+      box-shadow: 0 1px 4px rgba(192, 0, 0, .28);
+      transition: width 120ms linear;
+      will-change: width;
+    }
+
+    .resources-header-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: .65rem 1rem;
+      border-radius: 999px;
+      border: 1px solid hsl(var(--hue) var(--sat) var(--light) / .25);
+      background: hsl(var(--hue) var(--sat) var(--light) / .1);
+      color: var(--color-02);
+      font-size: .95rem;
+      font-weight: var(--font-medium);
+      transition: .3s ease;
+    }
+
+    .resources-header-link:hover {
+      color: var(--color-02);
+      border-color: hsl(var(--hue) var(--sat) var(--light) / .45);
+      background: hsl(var(--hue) var(--sat) var(--light) / .16);
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem 1.75rem;
+      border-radius: calc(var(--card-radius) + 4px);
+      background: var(--card-bg);
+      border: 1px solid hsl(var(--hue) 54% 74% / .12);
+      box-shadow: 0 18px 40px -24px rgba(0, 0, 0, .45);
+      animation: fadeUp .55s ease both;
+    }
+
+    .dashboard-header__copy {
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+
+    .dashboard-header__eyebrow {
+      font-size: .8rem;
+      font-weight: var(--font-semi-bold);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--primary-color);
+    }
+
+    .dashboard-header__title {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: var(--font-bold);
+      color: var(--color-02);
+      line-height: 1.1;
+    }
+
+    .dashboard-header__subtitle {
+      max-width: 640px;
+      color: var(--color-04);
+      font-size: var(--small-font-size);
+      line-height: 1.6;
+    }
+
+    .dashboard-header__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: .75rem 1.15rem;
+      border-radius: 999px;
+      background: var(--color-01);
+      color: #fff;
+      font-size: .95rem;
+      font-weight: var(--font-semi-bold);
+      text-decoration: none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .back-link:hover {
+      color: #fff;
+      opacity: .9;
+      transform: translateY(-1px);
+    }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      margin-bottom: 4rem;
+      animation: fadeUp .7s ease both;
+    }
+
+    .page-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--heading-font);
+      font-size: var(--tiny-font-size);
+      font-weight: var(--font-semi-bold);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero__eyebrow::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+
+    .page-hero__title {
+      font-family: var(--heading-font);
+      font-size: clamp(2.5rem, 5vw, var(--h1-font-size));
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--color-02);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero__title span {
+      color: var(--primary-color);
+    }
+
+    .page-hero__subtitle {
+      font-size: var(--base-font-size);
+      font-weight: var(--font-light);
+      color: var(--color-04);
+      max-width: 560px;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--primary-color) 0%, transparent 70%);
+      margin: var(--section-gap) 0;
+      opacity: .25;
+    }
+
+    /* ── SECTION HEAD ── */
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      animation: fadeUp .6s ease both;
+    }
+
+    .section-head__tag {
+      display: inline-block;
+      font-family: var(--heading-font);
+      font-size: var(--tiny-font-size);
+      font-weight: var(--font-semi-bold);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      background: hsl(var(--hue) var(--sat) var(--light) / .1);
+      border: 1px solid hsl(var(--hue) var(--sat) var(--light) / .2);
+      padding: .25rem .75rem;
+      border-radius: 99px;
+      margin-bottom: .75rem;
+    }
+
+    .section-head__title {
+      font-family: var(--heading-font);
+      font-size: clamp(1.6rem, 3vw, var(--h2-font-size));
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+      color: var(--color-02);
+    }
+
+    .section-head__count {
+      font-family: var(--heading-font);
+      font-size: clamp(1rem, 6vw, 2rem);
+      font-weight: 800;
+      color: hsl(var(--hue) var(--sat) var(--light) / .08);
+      line-height: 1;
+      letter-spacing: -.04em;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    /* ── VIDEO GRID ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ── VIDEO CARD ── */
+    .video-card {
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid hsl(var(--hue) 54% 74% / .1);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      animation: fadeUp .5s ease both;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      border-color: hsl(var(--hue) var(--sat) var(--light) / .3);
+      box-shadow: 0 24px 48px -12px hsl(var(--hue) var(--sat) var(--light) / .15);
+    }
+
+    /* 16:9 wrapper */
+    .video-card__thumb {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: hsl(var(--hue) 20% 8%);
+      overflow: hidden;
+    }
+
+    /* The <video> element sits inside the 16:9 wrapper */
+    .video-card__player {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-card__meta {
+      padding: 1.1rem 1.25rem 1.3rem;
+    }
+
+    .video-card__meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+
+    .video-card__index {
+      font-family: var(--heading-font);
+      font-size: .72rem;
+      font-weight: var(--font-semi-bold);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      opacity: .7;
+      margin-bottom: .3rem;
+    }
+
+    .video-card__views {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .28rem .72rem;
+      border: 1px solid hsl(0 0% 100% / .08);
+      border-radius: 999px;
+      background: hsl(0 0% 100% / .04);
+      color: var(--color-04);
+      font-family: var(--heading-font);
+      font-size: .72rem;
+      font-weight: var(--font-medium);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .video-card__views i {
+      color: var(--primary-color);
+      font-size: .88rem;
+    }
+
+    .video-card__title {
+      font-family: var(--heading-font);
+      font-size: var(--small-font-size);
+      font-weight: var(--font-semi-bold);
+      color: var(--color-02);
+      line-height: 1.35;
+    }
+
+    .video-card__desc {
+      font-size: var(--tiny-font-size);
+      color: var(--color-04);
+      margin-top: .4rem;
+      font-weight: var(--font-light);
+      line-height: 1.5;
+    }
+
+    .video-card:nth-child(1) {
+      animation-delay: .05s
+    }
+
+    .video-card:nth-child(2) {
+      animation-delay: .10s
+    }
+
+    .video-card:nth-child(3) {
+      animation-delay: .15s
+    }
+
+    .video-card:nth-child(4) {
+      animation-delay: .20s
+    }
+
+    .video-card:nth-child(5) {
+      animation-delay: .25s
+    }
+
+    .video-card:nth-child(6) {
+      animation-delay: .30s
+    }
+
+    .video-card:nth-child(7) {
+      animation-delay: .35s
+    }
+
+    /* ── PDF LAYOUT (viewer + info side-by-side) ── */
+    .pdf-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .pdf-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pdf-card {
+      border-radius: var(--card-radius);
+      background: var(--card-bg);
+      border: 1px solid hsl(var(--hue) 54% 74% / .1);
+      overflow: hidden;
+      animation: fadeUp .5s ease both;
+      transition: border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .pdf-card:hover {
+      border-color: hsl(var(--hue) var(--sat) var(--light) / .3);
+      box-shadow: 0 24px 48px -12px hsl(var(--hue) var(--sat) var(--light) / .12);
+    }
+
+    .pdf-card__viewer {
+      width: 100%;
+      height: 460px;
+      border: none;
+      display: block;
+      background: hsl(var(--hue) 20% 8%);
+    }
+
+    .pdf-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-top: 1px solid hsl(var(--hue) 54% 74% / .08);
+      flex-wrap: wrap;
+    }
+
+    .pdf-card__label {
+      font-family: var(--heading-font);
+      font-size: var(--small-font-size);
+      font-weight: var(--font-semi-bold);
+      color: var(--color-02);
+    }
+
+    .pdf-card__sublabel {
+      font-size: var(--tiny-font-size);
+      color: var(--color-04);
+      font-weight: var(--font-light);
+      margin-top: .2rem;
+    }
+
+    /* ── PDF GRID (notice board tiles) ── */
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pdf-tile {
+      border-radius: var(--card-radius);
+      background: var(--card-bg);
+      border: 1px solid hsl(var(--hue) 54% 74% / .1);
+      overflow: hidden;
+      animation: fadeUp .5s ease both;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .pdf-tile:hover {
+      transform: translateY(-4px);
+      border-color: hsl(var(--hue) var(--sat) var(--light) / .3);
+      box-shadow: 0 24px 48px -12px hsl(var(--hue) var(--sat) var(--light) / .15);
+    }
+
+    .pdf-tile__viewer {
+      width: 100%;
+      height: 300px;
+      border: none;
+      display: block;
+      background: hsl(var(--hue) 20% 8%);
+    }
+
+    .pdf-tile__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .9rem 1.1rem;
+      border-top: 1px solid hsl(var(--hue) 54% 74% / .08);
+      flex-wrap: wrap;
+    }
+
+    .pdf-tile__label {
+      font-family: var(--heading-font);
+      font-size: var(--tiny-font-size);
+      font-weight: var(--font-semi-bold);
+      color: var(--color-02);
+    }
+
+    .pdf-tile__sublabel {
+      font-size: .85rem;
+      color: var(--color-04);
+      font-weight: var(--font-light);
+      margin-top: .15rem;
+    }
+
+    .pdf-tile:nth-child(1) {
+      animation-delay: .05s
+    }
+
+    .pdf-tile:nth-child(2) {
+      animation-delay: .10s
+    }
+
+    .pdf-tile:nth-child(3) {
+      animation-delay: .15s
+    }
+
+    .pdf-tile:nth-child(4) {
+      animation-delay: .20s
+    }
+
+    /* ── INFO PANEL ── */
+    .info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      animation: fadeUp .55s ease .1s both;
+    }
+
+    .info-card {
+      border-radius: var(--card-radius);
+      background: var(--card-bg);
+      border: 1px solid hsl(var(--hue) 54% 74% / .1);
+      padding: 1.5rem;
+      transition: border-color .3s ease;
+    }
+
+    .info-card:hover {
+      border-color: hsl(var(--hue) var(--sat) var(--light) / .25);
+    }
+
+    .info-card__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: hsl(var(--hue) var(--sat) var(--light) / .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .info-card__icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    .info-card__title {
+      font-family: var(--heading-font);
+      font-size: var(--medium-font-size);
+      font-weight: var(--font-semi-bold);
+      color: var(--color-02);
+      margin-bottom: .5rem;
+    }
+
+    .info-card__body {
+      font-size: var(--tiny-font-size);
+      color: var(--color-04);
+      line-height: 1.7;
+      font-weight: var(--font-light);
+    }
+
+    .info-card__list {
+      list-style: none;
+      margin-top: .75rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .info-card__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: var(--tiny-font-size);
+      color: var(--color-04);
+      font-weight: var(--font-light);
+      line-height: 1.5;
+    }
+
+    .info-card__list li::before {
+      content: "";
+      flex-shrink: 0;
+      margin-top: .45rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary-color);
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--heading-font);
+      font-size: var(--tiny-font-size);
+      font-weight: var(--font-semi-bold);
+      color: var(--dark-color);
+      background: var(--primary-color);
+      border: none;
+      padding: .6rem 1.2rem;
+      border-radius: 99px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+      white-space: nowrap;
+      letter-spacing: .02em;
+      flex-shrink: 0;
+    }
+
+    .btn-primary:hover {
+      background: var(--hover-color);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px hsl(var(--hue) var(--sat) var(--light) / .3);
+    }
+
+    .btn-primary svg {
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-family: var(--heading-font);
+      font-size: var(--tiny-font-size);
+      font-weight: var(--font-semi-bold);
+      color: var(--primary-color);
+      background: hsl(var(--hue) var(--sat) var(--light) / .1);
+      border: 1px solid hsl(var(--hue) var(--sat) var(--light) / .25);
+      padding: .5rem 1rem;
+      border-radius: 99px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-ghost:hover {
+      background: hsl(var(--hue) var(--sat) var(--light) / .18);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+
+      .dashboard-header {
+        padding: 1.25rem;
+      }
+
+      .dashboard-header,
+      .dashboard-header__actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .video-grid,
+      .pdf-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-wrapper {
+        padding: 7rem 1.25rem 4rem;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-head__count {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+  </div>
+
+  <div class="to-top-btn">
+    <a href="#top" aria-label="Back to top"><span>To Top</span></a>
+    <div class="scroll-indicator-bar"></div>
+  </div>
+
+  <header class="sue-header">
+    <div class="sue-container">
+      <div class="inner">
+        <div class="sue-logo">
+          <a href="index.html"><span>One<span style="color: #b22810;">X</span></span></a>
+        </div>
+        <div class="header-btns">
+          <!-- <a class="resources-header-link" href="dashboard.html">Dashboard</a> -->
+          <div class="dashboard-header__actions">
+            <a class="back-link" href="index.html">&#8592; Back to OneX</a>
+          </div>
+          <div class="theme-btn" aria-label="Toggle theme" role="button" tabindex="0">
+            <i class="ri-sun-fill sun-icon"></i>
+            <i class="ri-moon-fill moon-icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="progress-wrap" aria-hidden="true">
+    <div class="progress-bar" id="scrollProgress"></div>
+  </div>
+
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+
+  <main class="page-wrapper">
+
+    <!-- <section class="dashboard-header" aria-label="Resources heading">
+      <div class="dashboard-header__copy">
+        <p class="dashboard-header__eyebrow">OneX Resources</p>
+        <h1 class="dashboard-header__title">Everything you need,<br><span>in one place.</span></h1>
+        <p class="dashboard-header__subtitle">Explore our manifesto videos, assessments, pledges, pulse reports, and monthly service notices.</p>
+      </div>
+    </section> -->
+
+    <!-- PAGE HERO -->
+    <header class="page-hero">
+      <p class="page-hero__eyebrow">Resources</p>
+      <h1 class="page-hero__title">Everything you need,<br><span>in one place.</span></h1>
+      <p class="page-hero__subtitle">Explore our manifesto videos, assessments, pledges, pulse reports, and monthly
+        service notices.</p>
+
+    </header>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 1 — MANIFESTO VIDEOS
+    ═══════════════════════════════════════════ -->
+    <section id="manifesto-videos" aria-labelledby="manifesto-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">Watch</span>
+          <h2 class="section-head__title" id="manifesto-heading">Manifesto Videos <span
+              style="color: var(--primary-color);"><i class="ri-file-video-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">08 Videos</span>
+      </div>
+
+      <div class="video-grid">
+
+        <!-- ─── VIDEO 1 ───
+             src       → path to your .mp4 file
+             poster    → path to a cover/thumbnail image (optional)
+             Update the episode label, title, and description below -->
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-01" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/r/sites/CustomerExperienceGroup/servicevalueassesment/Voice%20of%20The%20Customer/The%20OneX%20Hub/Resources/Abu%20-%20SCEM%20Video%201.mp4?download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/r/sites/CustomerExperienceGroup/servicevalueassesment/Voice%20of%20The%20Customer/The%20OneX%20Hub/Resources/Abu%20-%20SCEM%20Video%201.mp4?download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 01</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Abubakar Suleiman</p>
+            <p class="video-card__desc">I have always wondered if we would ever live up to the name Sterling.</p>
+          </div>
+        </article>
+
+        <!-- ─── VIDEO 2 ─── -->
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-02"
+              poster="assets/Resources/Abu - SCEM Video 2.mp4" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQCdpky6uOtrQ6lFPUsDIufoATBEokzL5XKnU7u4UxldDJI?e=stmKrV&download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQCdpky6uOtrQ6lFPUsDIufoATBEokzL5XKnU7u4UxldDJI?e=stmKrV&download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 02</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Abubakar Suleiman</p>
+            <p class="video-card__desc">The way you know this manefesto has served, is when you become a better version
+              of yourself.</p>
+          </div>
+        </article>
+
+        <!-- ─── VIDEO 3 ─── -->
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-03"
+              poster="/assets/Resources/Dele - SCEM Video.mp4" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQCRav7feMULTI8ncZpRYHJiAS6a5wQAIKVwIDt-O0Df3vU?e=WKHW2D&download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQCRav7feMULTI8ncZpRYHJiAS6a5wQAIKVwIDt-O0Df3vU?e=WKHW2D&download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 03</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Dele Faseemo</p>
+            <p class="video-card__desc">Our ambition determine how we grow, our we thrive and how we live a meaningful
+              life.</p>
+          </div>
+        </article>
+
+        <!-- ─── VIDEO 4 ─── -->
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-04"
+              poster="assets/Resources/Anwuli- SCEM Video.mp4" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQC3whg9wN0tTKqxKAQQ-h76AQ9mQgMvgPHZ5c9pc105kJo?e=OO6JRB&download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQC3whg9wN0tTKqxKAQQ-h76AQ9mQgMvgPHZ5c9pc105kJo?e=OO6JRB&download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 04</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Anwuli Femi-Pearse</p>
+            <p class="video-card__desc">Behind every number there is a need, behind every transaction there is a story.
+            </p>
+          </div>
+        </article>
+
+        <!-- ─── VIDEO 5 ─── -->
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-05"
+              poster="assets/Resources/Dipo - SCEM Video.mp4" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQCG1V8oz7gqQ50EhdzhG3WnAVXl5Nvx0BwzAuoIaBkAxAo?e=Bn3rjL&download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQCG1V8oz7gqQ50EhdzhG3WnAVXl5Nvx0BwzAuoIaBkAxAo?e=Bn3rjL&download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 05</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Dipo Adebajo</p>
+            <p class="video-card__desc">For us in Sterling, our people are not just staff, we call them Sterling Humans.
+            </p>
+          </div>
+        </article>
+
+        <!-- ─── VIDEO 6 ─── -->
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-06"
+              poster="assets/Resources/Ukachi - SCEM Video.mp4" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQBGP1cGwffXR4zED7ApeRWKAVfZmJjDuoFvakV0qqNLeLA?e=P4K9Wa&download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQBGP1cGwffXR4zED7ApeRWKAVfZmJjDuoFvakV0qqNLeLA?e=P4K9Wa&download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 06</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Ukachi Osas-Airen</p>
+            <p class="video-card__desc">When our systems run seamlessly, our customers feel understood.</p>
+          </div>
+        </article>
+
+        <!-- ─── VIDEO 7 ─── -->
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-07"
+              poster="assets/Resources/Akporee - SCEM Video.mp4" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQAW8h0SmLRaRZkCMSPNw9LfAXlDuShIfeVFZ_4ferVgvR0?e=3Ik02x&download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQAW8h0SmLRaRZkCMSPNw9LfAXlDuShIfeVFZ_4ferVgvR0?e=3Ik02x&download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 07</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Akporee Idenedo</p>
+            <p class="video-card__desc">Service isn't just what we deliver, it is who we are. It is the quiet promise
+              behind every interaction and relationship that we build.</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-card__thumb">
+            <video class="video-card__player" data-video-id="manifesto-video-08"
+              poster="assets/Resources/Raheem - SCEM Video.mp4" controls preload="none">
+              <source
+                src="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQA9_Xh5CudzS5RPZMehMjynAfmT_8yt8caAX7G1tsz2t-k?e=qdHlSC&download=1"
+                type="video/mp4">
+              Your browser cannot play this video. <a
+                href="https://sterlingbankng.sharepoint.com/:v:/s/CustomerExperienceGroup/servicevalueassesment/IQA9_Xh5CudzS5RPZMehMjynAfmT_8yt8caAX7G1tsz2t-k?e=qdHlSC&download=1"
+                target="_blank" rel="noopener">Watch on SharePoint</a>
+            </video>
+          </div>
+          <div class="video-card__meta">
+            <div class="video-card__meta-top">
+              <p class="video-card__index">Video 08</p>
+              <p class="video-card__views" aria-live="polite"><i class="ri-eye-line" aria-hidden="true"></i><span>0
+                  Views</span></p>
+            </div>
+            <p class="video-card__title">Raheem Owodeyi</p>
+            <p class="video-card__desc">From now on, what customers will feel is a welcome with every sterling touch
+              point.</p>
+          </div>
+        </article>
+
+      </div><!-- /video-grid -->
+    </section>
+
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 1B — MANIFESTO DOCUMNET
+    ═══════════════════════════════════════════ -->
+
+    <section id="Manifesto" aria-labelledby="pulse-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">The Mandate: “One Customer, One Experience”</span>
+          <h2 class="section-head__title" id="pulse-heading">Manifesto <span style="color: var(--primary-color);"><i
+                class="ri-file-list-3-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">PDF</span>
+      </div>
+      <div class="pdf-layout">
+        <div class="pdf-card">
+          <iframe class="pdf-card__viewer" src="/assets/Resources/Sterling CX Manifesto.pdf"
+            title="OneXpulse Report PDF" type="application/pdf"></iframe>
+          <div class="pdf-card__footer">
+            <div>
+              <p class="pdf-card__label">The Manifesto</p>
+              <p class="pdf-card__sublabel">The Manifesto · PDF</p>
+            </div>
+            <a href="/assets/Resources/Sterling CX Manifesto.pdf" target="_blank" rel="noopener" class="btn-primary">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open full screen
+            </a>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg></div>
+            <h3 class="info-card__title">What is the Mandate?</h3>
+            <p class="info-card__body">The OneX mandate is a transformation of the bank’s culture, mindset, and
+              operating model designed to treat every customer as a single, unified individual, not just an account
+              number or transaction.
+              It shifts the organization from fragmented service delivery to a seamless, relationship-led experience,
+              anchored on three core pillars: One Voice,One Relationship, One team</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg></div>
+            <h3 class="info-card__title">Why this matters?</h3>
+            <p class="info-card__body">The OneX initiative redefines banking from transaction processing to meaningful
+              relationship building, ensuring that every interaction strengthens trust and loyalty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 2 — MATURITY ASSESSMENT
+    ═══════════════════════════════════════════ -->
+    <section id="maturity-assessment" aria-labelledby="assessment-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">Evaluate</span>
+          <h2 class="section-head__title" id="assessment-heading">Maturity Assessment <span
+              style="color: var(--primary-color);"><i class="ri-survey-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">PDF</span>
+      </div>
+      <div class="pdf-layout">
+        <div class="pdf-card">
+          <iframe class="pdf-card__viewer" src="assets/Resources/CX Maturity Assessment.pdf"
+            title="Maturity Assessment PDF" type="application/pdf"></iframe>
+          <div class="pdf-card__footer">
+            <div>
+              <p class="pdf-card__label">Maturity Assessment</p>
+              <p class="pdf-card__sublabel">PDF Document · Interactive Viewer</p>
+            </div>
+            <a href="assets/Resources/CX Maturity Assessment.pdf" target="_blank" rel="noopener" class="btn-primary">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open full screen
+            </a>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg></div>
+            <h3 class="info-card__title">What is this assessment?</h3>
+            <p class="info-card__body">The Customer Experience (CX) maturity assessment evaluates how effectively CX is
+              embedded across the organization, and defines the path toward a more consistent, insight-driven
+              experience.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg></div>
+            <h3 class="info-card__title">What it covers</h3>
+            <ul class="info-card__list">
+              <li>Current CX maturity stage and capability level</li>
+              <li>Leadership perspective on existing gaps vs. desired experience</li>
+              <li>Priority actions to strengthen CX delivery and overall impact</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 3 — CX IMMERSION
+    ═══════════════════════════════════════════ -->
+    <section id="immersion" aria-labelledby="noticeboard-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">IMBIBE</span>
+          <h2 class="section-head__title" id="noticeboard-heading">CX Immersion <span
+              style="color: var(--primary-color);"><i class="ri-presentation-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">04</span>
+      </div>
+
+      <div class="pdf-grid">
+
+        <!-- Episode 1 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/CX Leadership Immersion Cascade Ep1.pdf"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">CX Immersion</p>
+              <p class="pdf-tile__sublabel">Episode 1</p>
+            </div>
+            <a href="/assets/Resources/CX Leadership Immersion Cascade Ep1.pdf" target="_blank" rel="noopener"
+              class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Episode 2-->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/CX Leadership Immersion Cascade Ep 2.pdf"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">CX Immersion</p>
+              <p class="pdf-tile__sublabel">Episode 2</p>
+            </div>
+            <a href="/assets/Resources/CX Leadership Immersion Cascade Ep 2.pdf" target="_blank" rel="noopener"
+              class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Episode 3 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/CX Leadership Immersion Cascade Ep 3.pdf"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">CX Immersion</p>
+              <p class="pdf-tile__sublabel">Episode 3</p>
+            </div>
+            <a href="/assets/Resources/CX Leadership Immersion Cascade Ep 3.pdf" target="_blank" rel="noopener"
+              class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Episode 4 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/CX Leadership Immersion Cascade Ep 4.pdf"
+            title="SFNB February 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">CX Immersion</p>
+              <p class="pdf-tile__sublabel">Episode 4</p>
+            </div>
+            <a href="/assets/Resources/CX Leadership Immersion Cascade Ep 4.pdf" target="_blank" rel="noopener"
+              class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 3 — iCSAT
+    ═══════════════════════════════════════════ -->
+    <section id="icsat" aria-labelledby="icsat-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">Measure</span>
+          <h2 class="section-head__title" id="icsat-heading">iCSAT <span style="color: var(--primary-color);"><i
+                class="ri-chat-poll-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">PDF</span>
+      </div>
+      <div class="pdf-layout">
+        <div class="pdf-card">
+          <iframe class="pdf-card__viewer" src="/assets/Resources/ICSAT Report.pdf" title="iCSAT Report PDF"
+            type="application/pdf"></iframe>
+          <div class="pdf-card__footer">
+            <div>
+              <p class="pdf-card__label">iCSAT Report</p>
+              <p class="pdf-card__sublabel">Internal Customer Satisfaction · PDF</p>
+            </div>
+            <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsway.cloud.microsoft%2FZS8pbKpQ6N4x2bwj%3Fref%3DLink&data=05%7C02%7CJohn.Maduabuchukwu%40sterling.ng%7C3a8027231c5f496762b508de7df5717b%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C639086690482995431%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=HdqV0%2BUIP%2Bk7eM7T1LmaGt%2BlrQHskh6rDpKoCqk4Mnk%3D&reserved=0"
+              target="_blank" rel="noopener" class="btn-primary">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open full screen
+            </a>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg></div>
+            <h3 class="info-card__title">Internal Customer Satisfaction</h3>
+            <p class="info-card__body">The iCSAT exercise measures how well internal teams serve each other. This report
+              captures findings and highlights areas of strength and opportunity across the organisation.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg></div>
+            <h3 class="info-card__title">Key Themes</h3>
+            <ul class="info-card__list">
+              <li>How teams rate the quality of support they receive</li>
+              <li>Bottlenecks and pain points across departments</li>
+              <li>Recommended actions to improve internal service</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 4 — SERVICE PLEDGE
+    ═══════════════════════════════════════════ -->
+    <section id="service-pledge" aria-labelledby="pledge-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">Commit</span>
+          <h2 class="section-head__title" id="pledge-heading">Service Promise <span
+              style="color: var(--primary-color);"><i class="ri-shake-hands-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">PDF</span>
+      </div>
+      <div class="pdf-layout">
+        <div class="pdf-card">
+          <iframe class="pdf-card__viewer" src="/assets/Resources/Service Promise.pdf" title="Service Pledge PDF"
+            type="application/pdf"></iframe>
+          <div class="pdf-card__footer">
+            <div>
+              <p class="pdf-card__label"> The Service Promise</p>
+              <p class="pdf-card__sublabel">Our Commitments · PDF</p>
+            </div>
+            <a href="/assets/Resources/Service Promise.pdf" target="_blank" rel="noopener" class="btn-primary">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open full screen
+            </a>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <h3 class="info-card__title">As A Sterling Human I Pledge To</h3>
+            <ul class="info-card__list">
+              <li>Listen actively and act with integrity</li>
+              <li>Simplify processes and communicate clearly</li>
+              <li>Collaborate to deliver timely, accurate, and customer-focused solutions</li>
+              <li>Keep my word and take personal ownership of every interaction</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg></div>
+            <h3 class="info-card__title">What it the Service Promise?</h3>
+            <p class="info-card__body">The Sterling Bank Service Promise defines how employees think, behave, and
+              deliver service, driving simple, reliable, and human-centered experiences while reinforcing accountability
+              across the organization</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 5 — ONEXPULSE
+    ═══════════════════════════════════════════ -->
+    <section id="onexpulse" aria-labelledby="pulse-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">Insights</span>
+          <h2 class="section-head__title" id="pulse-heading">OneX pulse <span style="color: var(--primary-color);"><i
+                class="ri-heart-pulse-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">PDF</span>
+      </div>
+      <div class="pdf-layout">
+        <div class="pdf-card">
+          <iframe class="pdf-card__viewer" src="/assets/Resources/OneX Pulse Assessment Report.pdf"
+            title="OneXpulse Report PDF" type="application/pdf"></iframe>
+          <div class="pdf-card__footer">
+            <div>
+              <p class="pdf-card__label">OneXpulse Report</p>
+              <p class="pdf-card__sublabel">Pulse Exercise Report · PDF</p>
+            </div>
+            <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsway.cloud.microsoft%2F7T0a3rm9gBfCwbi3%3Fref%3DLink&data=05%7C02%7CJohn.Maduabuchukwu%40sterling.ng%7C616f637ec4c244a9517308de8403dbe0%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C639093349574536054%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=TRCWXBm71CMywZqJ5m6l1B6p43bTKd3JynCbWQplGUI%3D&reserved=0"
+              target="_blank" rel="noopener" class="btn-primary">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open full screen
+            </a>
+          </div>
+        </div>
+        <div class="info-panel">
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg></div>
+            <h3 class="info-card__title">What is OneX pulse?</h3>
+            <p class="info-card__body">OneX Pulse provides the visibility, insights, and accountability needed to ensure
+              that the Service Promise and CX Manifesto are not just defined, but consistently delivered, effectively
+              measured, and continuously improved across the organization.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg></div>
+            <h3 class="info-card__title">Why the OneX Pulse matters?</h3>
+            <ul class="info-card__list">
+              <li>It shows if the Service Promise is actually being delivered</li>
+              <li>It drives accountability across teams</li>
+              <li>It drives accountability</li>
+              <li>It enables continuous improvement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 6 — SERVICE FAILURE NOTICE BOARD
+    ═══════════════════════════════════════════ -->
+    <section id="service-failure-notice-board" aria-labelledby="noticeboard-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">Monthly</span>
+          <h2 class="section-head__title" id="noticeboard-heading">Service Failure Notice Board <span
+              style="color: var(--primary-color);"><i class="ri-artboard-line"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">05</span>
+      </div>
+
+      <div class="pdf-grid">
+
+        <!-- Q3 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/Service Failure Noticeboard - Q3_2025.pdf"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">Q3 2025</p>
+              <p class="pdf-tile__sublabel">Report</p>
+            </div>
+            <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsway.cloud.microsoft%2FFRcDkPBDjWp2gUG1%3Fref%3Demail&data=05%7C02%7CJohn.Maduabuchukwu%40sterling.ng%7Cd95d063e5afe4bfe8a2a08de0fb7cd6c%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C638965479451260540%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=0Yt0x%2B9%2BjO92%2BRjd%2Bb%2ByXToDoblYSR1hLLmrM7qttAA%3D&reserved=0"
+              target="_blank" rel="noopener" class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Month 1-->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/Service Failure Notice Board - Oct 2025.pdf"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">October 2025</p>
+              <p class="pdf-tile__sublabel">Monthly Report</p>
+            </div>
+            <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsway.cloud.microsoft%2FYDpnEKB9lvgLn6mD&data=05%7C02%7CJohn.Maduabuchukwu%40sterling.ng%7Ce9e612f8a8624479b71408de21337545%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C638984702220335643%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=9OhxbqqBmBD8650Ns4aj32siLjU9Fvx%2F64do7KJn%2Fxo%3D&reserved=0"
+              target="_blank" rel="noopener" class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Month 2 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/Service Failure Notice Board - Nov 2025.pdf"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">November 2025</p>
+              <p class="pdf-tile__sublabel">Monthly Report</p>
+            </div>
+            <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsway.cloud.microsoft%2FEcnrqaMM5a5o6Cij%3Fref%3DLink&data=05%7C02%7CJohn.Maduabuchukwu%40sterling.ng%7Caa52099817734f2a7ca008de36621ae4%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C639007992354892164%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=3O%2B9CaVUFnq395JOKk2ZZgTgbHX2RKJwRNGf1Dos1T0%3D&reserved=0"
+              target="_blank" rel="noopener" class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Month 3 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/Service Failure Notice Board - December 2025.pdf"
+            title="SFNB February 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">December 2025</p>
+              <p class="pdf-tile__sublabel">Monthly Report</p>
+            </div>
+            <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsway.cloud.microsoft%2FTW5IZ6MWRpdWCJyq%3Fref%3DLink&data=05%7C02%7CJohn.Maduabuchukwu%40sterling.ng%7Cd5152fa376864317044c08de4f77d485%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C639035573416713311%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=23%2Fk8v3S0pns7ag1Dl84K5Yw0YduQExeUCP7lN5ibYw%3D&reserved=0"
+              target="_blank" rel="noopener" class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Month 4 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/Service Failure Notice Board - Feb 2026.pdf"
+            title="SFNB March 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">February 2026</p>
+              <p class="pdf-tile__sublabel">Monthly Report</p>
+            </div>
+            <a href="https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsway.cloud.microsoft%2FLxXLUWMSPSxfm5Ln%3Fref%3Demail&data=05%7C02%7CJohn.Maduabuchukwu%40sterling.ng%7Cc1b9b1caec784fb49e1a08de7e7b15a8%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C639087264697022231%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=5sY%2BmDS5BTO2heCZWVoYh%2FIOE%2BCaZ5JBUm%2FNG2tJnFU%3D&reserved=0"
+              target="_blank" rel="noopener" class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Month 5 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/Coming Soon.pdf" title="SFNB April 2025"
+            type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">March 2026</p>
+              <p class="pdf-tile__sublabel">Monthly Report</p>
+            </div>
+            <a href="/assets/Resources/Coming Soon.pdf" target="_blank" rel="noopener" class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 7 — LANDSCAPE REPORT
+    ═══════════════════════════════════════════ -->
+    <section id="service-failure-notice-board" aria-labelledby="noticeboard-heading">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__tag">Explore</span>
+          <h2 class="section-head__title" id="noticeboard-heading">CX Landscape <span
+              style="color: var(--primary-color);"><i class="ri-landscape-fill"></i></span></h2>
+        </div>
+        <span class="section-head__count" aria-hidden="true">05</span>
+      </div>
+
+      <div class="pdf-grid">
+
+        <!-- FY 2025 -->
+        <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="/assets/Resources/2025 CX LANDSCAPE REPORT  FY.pdf"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">Full Year 2025</p>
+              <p class="pdf-tile__sublabel">Report</p>
+            </div>
+            <a href="/assets/Resources/2025 CX LANDSCAPE REPORT  FY.pdf" target="_blank" rel="noopener"
+              class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article>
+
+        <!-- Q1 2026-->
+        <!-- <article class="pdf-tile">
+          <iframe class="pdf-tile__viewer" src="#"
+            title="SFNB January 2025" type="application/pdf"></iframe>
+          <div class="pdf-tile__footer">
+            <div>
+              <p class="pdf-tile__label">October 2025</p>
+              <p class="pdf-tile__sublabel">Monthly Report</p>
+            </div>
+            <a href="#"
+              target="_blank" rel="noopener" class="btn-ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Open
+            </a>
+          </div>
+        </article> -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const themeBtn = document.querySelector(".theme-btn");
+    const siteHeader = document.querySelector(".sue-header");
+    const progressWrap = document.querySelector(".progress-wrap");
+    const progressBar = document.getElementById("scrollProgress");
+    const toTopBtn = document.querySelector(".to-top-btn");
+    const scrollIndicatorBar = document.querySelector(".scroll-indicator-bar");
+    const cursor = document.querySelector(".cursor");
+    const savedIcon = localStorage.getItem("sue-saved-icon");
+    const savedTheme = localStorage.getItem("sue-saved-theme");
+
+    const applySavedTheme = () => {
+      if (savedIcon === "sun") {
+        themeBtn.classList.add("active-sun-icon");
+      }
+
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      }
+    };
+
+    const updateHeaderState = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+      siteHeader.classList.toggle("shrink", scrollTop > 0);
+      toTopBtn.classList.toggle("active", scrollTop > 0);
+      progressWrap.style.top = `${siteHeader.offsetHeight}px`;
+      progressBar.style.width = `${progress}%`;
+      scrollIndicatorBar.style.height = `${progress}%`;
+    };
+
+    const initializeCustomCursor = () => {
+      if (!cursor || !window.matchMedia("(pointer: fine)").matches) {
+        return;
+      }
+
+      const cursorDot = cursor.querySelector(".cursor-dot");
+      const cursorCircle = cursor.querySelector(".cursor-circle");
+      const cursorHoverTargets = document.querySelectorAll(
+        "body a, .theme-btn, .back-link, .btn-primary, .btn-ghost, .video-card, .pdf-card, .pdf-tile"
+      );
+
+      document.addEventListener("mousemove", (event) => {
+        const { clientX, clientY } = event;
+
+        cursorDot.style.top = `${clientY}px`;
+        cursorDot.style.left = `${clientX}px`;
+        cursorCircle.style.top = `${clientY}px`;
+        cursorCircle.style.left = `${clientX}px`;
+      });
+
+      cursorHoverTargets.forEach((target) => {
+        target.addEventListener("mouseover", () => {
+          cursorDot.classList.add("large");
+          cursorCircle.style.display = "none";
+        });
+
+        target.addEventListener("mouseout", () => {
+          cursorDot.classList.remove("large");
+          cursorCircle.style.display = "block";
+        });
+      });
+    };
+
+    const initializeVideoViewCounters = () => {
+      const videoPlayers = document.querySelectorAll(".video-card__player[data-video-id]");
+
+      if (!videoPlayers.length) {
+        return;
+      }
+
+      const storageKey = "onex-resource-video-views";
+      const savedViews = JSON.parse(localStorage.getItem(storageKey) || "{}");
+
+      const formatViewsLabel = (count) => `${count} ${count === 1 ? "View" : "Views"}`;
+
+      const updateViewsLabel = (videoId, count) => {
+        const video = document.querySelector(`.video-card__player[data-video-id="${videoId}"]`);
+        const label = video?.closest(".video-card")?.querySelector(".video-card__views span");
+
+        if (label) {
+          label.textContent = formatViewsLabel(count);
+        }
+      };
+
+      const playbackState = new Map();
+
+      const resetCycleState = (videoId) => {
+        const state = playbackState.get(videoId);
+
+        if (!state) {
+          return;
+        }
+
+        if (state.timerId) {
+          window.clearInterval(state.timerId);
+        }
+
+        state.timerId = null;
+        state.playedSeconds = 0;
+        state.hasCountedCurrentCycle = false;
+      };
+
+      videoPlayers.forEach((video) => {
+        const videoId = video.dataset.videoId;
+        const currentCount = Number(savedViews[videoId] || 0);
+        const state = {
+          playedSeconds: 0,
+          hasCountedCurrentCycle: false,
+          timerId: null,
+        };
+
+        playbackState.set(videoId, state);
+
+        updateViewsLabel(videoId, currentCount);
+
+        video.addEventListener("play", () => {
+          if (state.timerId || state.hasCountedCurrentCycle) {
+            return;
+          }
+
+          state.timerId = window.setInterval(() => {
+            if (video.paused || video.ended) {
+              return;
+            }
+
+            state.playedSeconds += 1;
+
+            if (state.playedSeconds >= 30 && !state.hasCountedCurrentCycle) {
+              const nextCount = Number(savedViews[videoId] || 0) + 1;
+              savedViews[videoId] = nextCount;
+              state.hasCountedCurrentCycle = true;
+              window.clearInterval(state.timerId);
+              state.timerId = null;
+              localStorage.setItem(storageKey, JSON.stringify(savedViews));
+              updateViewsLabel(videoId, nextCount);
+            }
+          }, 1000);
+        });
+
+        video.addEventListener("pause", () => {
+          if (state.timerId) {
+            window.clearInterval(state.timerId);
+            state.timerId = null;
+          }
+        });
+
+        video.addEventListener("ended", () => {
+          resetCycleState(videoId);
+        });
+      });
+    };
+
+    themeBtn.addEventListener("click", () => {
+      themeBtn.classList.toggle("active-sun-icon");
+      document.body.classList.toggle("light-theme");
+
+      const currentIcon = themeBtn.classList.contains("active-sun-icon") ? "sun" : "moon";
+      const currentTheme = document.body.classList.contains("light-theme") ? "light" : "dark";
+
+      localStorage.setItem("sue-saved-icon", currentIcon);
+      localStorage.setItem("sue-saved-theme", currentTheme);
+    });
+
+    themeBtn.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        themeBtn.click();
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      applySavedTheme();
+      updateHeaderState();
+      initializeCustomCursor();
+      initializeVideoViewCounters();
+    });
+
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+  </script>
+
+</body>
+
+</html>

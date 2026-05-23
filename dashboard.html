@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OneX Dashboard View</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: var(--body-font-family);
+      background: var(--body-color);
+    }
+
+    .sue-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .sue-logo a {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--body-font-family);
+      font-size: 2.6rem;
+      font-weight: var(--font-semi-bold);
+      letter-spacing: -3px;
+      line-height: 1;
+    }
+
+    .sue-logo a span {
+      line-height: 1;
+    }
+
+    .dashboard-shell {
+      display: flex;
+      gap: 1rem;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 2rem;
+      max-width: 1400px;
+      box-sizing: border-box;
+    }
+
+    .dashboard-sidebar {
+      width: 240px;
+      background: var(--card-bg);
+      border: 2px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: fit-content;
+      margin-top: 0; /* set by script */
+    }
+
+    .dashboard-sidebar h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      color: var(--color-01);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .dashboard-sidebar button {
+      width: 100%;
+      border: 1px solid #3a485b;
+      border-color: color-mix(in srgb, #3a485b 50%, transparent);
+      background: transparent;
+      color: var(--color-04);
+      border-radius: 8px;
+      padding: 0.7rem 0.8rem;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all .2s ease;
+    }
+
+    .dashboard-sidebar button:hover,
+    .dashboard-sidebar button.active {
+      border-color: #b22810;
+      border-color: color-mix(in srgb, #b22810 30%, transparent);
+      background: rgba(178,40,16,0.15);
+      color: #fff;
+    }
+
+    body.light-theme .dashboard-sidebar button:hover,
+    body.light-theme .dashboard-sidebar button.active {
+      color: #000;
+    }
+
+    .dashboard-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .dashboard-header h1 { margin: 0; font-size: 1.8rem; color: var(--color-01); }
+    .back-link {
+      color: #fff;
+      background: var(--color-01);
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .2s ease;
+    }
+    .back-link:hover { opacity: .85; }
+    .iframe-wrapper {
+      border: none;
+      border-radius: 14px;
+      height: 78vh;
+      overflow: hidden;
+      background: var(--card-bg);
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .no-vendor {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--color-04);
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-shell">
+    <div class="dashboard-sidebar">
+      <h2>Dashboard Sections</h2>
+      <button type="button" data-view="crm-overview" class="active">CRM Overview</button>
+      <button type="button" data-view="customer-interaction">Customer Interaction</button>
+      <button type="button" data-view="channel-monitoring">Channel Monitoring</button>
+      <button type="button" data-view="customer-health">Customer Health</button>
+      <button type="button" data-view="transaction-performance">Transaction Performance</button>
+    </div>
+
+    <div class="dashboard-main">
+      <div class="dashboard-header">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="sue-logo">
+            <a href="index.html"><span>One<span style="color: #b22810;">X</span></span></a>
+          </div>
+          <div>
+            <h1>Main Dashboard</h1>
+            <p style="margin:.25rem 0 0;color: var(--color-04);">Monitor key metrics and performance indicators.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <div class="theme-btn">
+            <i class="ri-sun-fill sun-icon"></i>
+            <i class="ri-moon-fill moon-icon"></i>
+          </div>
+          <a class="back-link" href="index.html#resume">&#8592; Back to OneX</a>
+        </div>
+      </div>
+
+      <div class="iframe-wrapper">
+      <iframe id="dashboardFrame" src="about:blank" title="OneX Embedded Dashboard"></iframe>
+      <div id="emptyMessage" class="no-vendor" style="display:none;">No dashboard URL found. Use one of the supported dashboard views.</div>
+      <div id="blockedMessage" class="no-vendor" style="display:none; font-size: 1rem; padding: 1rem; color: var(--color-04);">
+        Embedded dashboard did not load (possible X-Frame-Options or SmartScreen blocking). You can try opening directly:
+        <br><a id="directLink" href="#" target="_blank" rel="noopener noreferrer">Open Dashboard in New Tab</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Website dark/light theme
+    const themeBtn = document.querySelector(".theme-btn");
+
+    themeBtn.addEventListener("click", () => {
+       themeBtn.classList.toggle("active-sun-icon");
+       document.body.classList.toggle("light-theme");
+
+       const getCurrentIcon = () => themeBtn.classList.contains("active-sun-icon") ? "sun" : "moon";
+       const getCurrentTheme = () => document.body.classList.contains("light-theme") ? "light" : "dark";
+
+       localStorage.setItem("sue-saved-icon", getCurrentIcon());
+       localStorage.setItem("sue-saved-theme", getCurrentTheme());
+    });
+
+    // Get saved theme icon and theme on document loaded.
+    const savedIcon = localStorage.getItem("sue-saved-icon");
+    const savedTheme = localStorage.getItem("sue-saved-theme");
+
+    document.addEventListener("DOMContentLoaded", () => {
+       themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("active-sun-icon");
+       document.body.classList[savedTheme === "light" ? "add" : "remove"]("light-theme");
+       setSidebarTopToIframe();
+    });
+
+    window.addEventListener('resize', setSidebarTopToIframe);
+
+    function setSidebarTopToIframe() {
+      const sidebar = document.querySelector('.dashboard-sidebar');
+      const iframeWrapper = document.querySelector('.iframe-wrapper');
+      const dashboardShell = document.querySelector('.dashboard-shell');
+      if (sidebar && iframeWrapper && dashboardShell) {
+        const iframeTop = iframeWrapper.getBoundingClientRect().top;
+        const shellTop = dashboardShell.getBoundingClientRect().top;
+        sidebar.style.marginTop = `${Math.max(0, iframeTop - shellTop)}px`;
+      }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get('view') || 'crm-overview';
+    const frame = document.getElementById('dashboardFrame');
+    const empty = document.getElementById('emptyMessage');
+    const blocked = document.getElementById('blockedMessage');
+    const directLink = document.getElementById('directLink');
+
+    const urls = {
+      'crm-overview': 'https://sterlingobservability-sterlingbankng.msappproxy.net/one-monitor-v2/monitoring/home-page',
+      'customer-interaction': 'https://sterlingcmp.pressone.co/app/accounts/1/reports/inboxes',
+      'channel-monitoring': 'https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fbitool.sterling.ng%2Fsuperset%2Fdashboard%2F601%2F%3Fnative_filters_key%3Di-z1INAORQQ&data=05%7C02%7CMobolaji.Ibine%40Sterling.ng%7C985ae867c2324c0942a808de787420e8%7C4c8a9f7a11fc4fc290990b68f72a197e%7C0%7C0%7C639080637321987721%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=oMz6SYa7laXEHbGnI2nqy28FxR09MieR%2Fh%2BvtucL2dQ%3D&reserved=0',
+      'customer-health': 'https://sterlingobservability-sterlingbankng.msappproxy.net/one-monitor-v2/customer-health/home-page',
+      'transaction-performance': 'https://sterlingobservability-sterlingbankng.msappproxy.net/one-monitor-v2/transaction-performance/home-page'
+    };
+
+    const viewAliases = {
+      'virtual-monitoring': 'crm-overview',
+      'voc-dashboard': 'customer-interaction',
+      'command-centre': 'channel-monitoring'
+    };
+
+    const buttons = document.querySelectorAll('.dashboard-sidebar button');
+
+    const setActiveButton = (activeKey) => {
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.view === activeKey));
+    };
+
+    const normalizeView = (viewKey) => viewAliases[viewKey] || viewKey;
+
+    const showView = (viewKey) => {
+      const resolvedView = normalizeView(viewKey);
+
+      if (urls[resolvedView]) {
+        frame.src = urls[resolvedView];
+        frame.style.display = 'block';
+        empty.style.display = 'none';
+        blocked.style.display = 'grid';
+        blocked.innerHTML = 'If the embedded dashboard is blocked (SmartScreen/X-Frame-Options), use this link: <a id="directLink" href="' + urls[resolvedView] + '" target="_blank" rel="noopener noreferrer">Open in new tab</a>';
+        setActiveButton(resolvedView);
+        window.history.replaceState(null, '', '?view=' + encodeURIComponent(resolvedView));
+      } else {
+        frame.style.display = 'none';
+        empty.style.display = 'grid';
+        blocked.style.display = 'none';
+      }
+    };
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selected = button.dataset.view;
+        showView(selected);
+      });
+    });
+
+    showView(view);
+  </script>
+</body>
+</html>

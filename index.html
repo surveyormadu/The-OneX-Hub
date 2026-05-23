@@ -1,0 +1,2641 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project OneX Portal</title>
+
+  <!--========== Swiper CSS ==========-->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+  <!--========== Main style sheet ==========-->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!--========== Hero Style Sheet ==========-->
+  <link rel="stylesheet" href="assets/css/stylehero.css"> <!-- Hero Section -->
+
+  <!--========== Remixicon ==========-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> <!-- Hero Section -->
+
+  <!--========== ScrollReveal JS ==========-->
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script> <!-- Hero Section -->
+
+</head>
+
+<body>
+
+  <!--========== Customized cursor ==========-->
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+  </div>
+
+  <!--========== To top button with scroll indicator bar ==========-->
+  <div class="to-top-btn">
+    <a href="#home"><span>To Top</span></a>
+    <div class="scroll-indicator-bar"></div>
+  </div>
+
+  <!--========== Header ==========-->
+  <header class="sue-header">
+    <div class="sue-container">
+      <div class="inner">
+        <div class="sue-logo">
+          <a href="#"><span>One<span style="color: #b22810;">X</span></span></a>
+        </div>
+        <div class="header-btns">
+          <!-- <a href="#contact" class="sue-btn-link">
+            <div class="sue-main-btn border-btn lets-talk-btn">Let's talk</div>
+          </a> -->
+          <a href="#contact" class="lets-talk-icon"><i class="ri-chat-1-fill"></i></a>
+          <div class="theme-btn">
+            <i class="ri-sun-fill sun-icon"></i>
+            <i class="ri-moon-fill moon-icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar" id="scrollProgress"></div>
+    </div>
+  </header>
+
+  <!--========== Bottom navigation menu ==========-->
+  <div class="bottom-nav-container">
+    <div class="bottom-nav">
+      <div class="bottom-nav-inner">
+        <i class="ri-arrow-left-down-line menu-hide-btn"></i>
+        <ul class="menu">
+          <li class="menu-item"><a href="#home" class="current"><i class="ri-home-4-line"></i><span>Home</span></a></li>
+          <li class="menu-item"><a href="#about"><i class="ri-user-line"></i><span>About</span></a></li>
+          <li class="menu-item"><a href="#service"><i class="ri-service-line"></i><span>Transformation
+                Journey</span></a></li>
+          <li class="menu-item"><a href="#portfolio"><i class="ri-briefcase-line"></i><span>Initiatives &
+                Programs</span></a></li>
+          <li class="menu-item"><a href="#resume"><i class="ri-quote-text"></i><span>Virtual Monitoring</span></a></li>
+          <li class="menu-item"><a href="#contact"><i class="ri-chat-1-line"></i><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-show-btn">
+      <div class="bar-01"></div>
+      <div class="bar-02"></div>
+    </div>
+  </div>
+
+  <!--========== Home ==========-->
+  <section class="sue-section nav-menu-section" id="home">
+    <div class="sue-container home-container">
+      <div class="sue-wrapper">
+
+        <a href="#about" class="home-scroll-btn">
+          <i class="ri-mouse-line mouse-icon"></i>
+          <div>Scroll Down</div>
+          <i class="ri-arrow-down-s-line arrow-icon"></i>
+        </a>
+
+        <div class="swiper bg-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide dash-slide" data-swiper-autoplay="90000">
+              <div class="dash-panel">
+
+                <!-- Top bar -->
+                <div class="dash-topbar">
+                  <div class="dash-brand">
+                    <!-- <div class="dash-brand-icon">CX</div> -->
+                    <div>
+                      <div class="dash-brand-name">Virtual Monitoring Center</div>
+                      <!-- <div class="dash-brand-sub">Command Center Dashboard</div> -->
+                    </div>
+                  </div>
+                  <div class="dash-topbar-right">
+                    <!-- <span class="dash-date">May 2025 &mdash; Q2</span> -->
+                    <span class="live-badge">&#9679;&nbsp;Live</span>
+                  </div>
+                </div>
+
+                <div class="dash-divider"></div>
+
+                <!-- KPI Cards -->
+                <div class="dash-kpi-row">
+
+                  <!-- Customer Health -->
+                  <div class="dash-kpi-card">
+                    <div class="kpi-card-top">
+                      <span class="kpi-title">Customer Health</span>
+                      <span class="kpi-icon"><i class="uil uil-users-alt"></i></span>
+                    </div>
+                    <div class="kpi-metrics">
+                      <div class="kpi-metric">
+                        <span class="kpi-val green" id="kv-active">1.23M</span>
+                        <span class="kpi-lbl">Active</span>
+                      </div>
+                      <div class="kpi-sep"></div>
+                      <div class="kpi-metric">
+                        <span class="kpi-val amber" id="kv-inactive">89.4K</span>
+                        <span class="kpi-lbl">Inactive</span>
+                      </div>
+                      <div class="kpi-sep"></div>
+                      <div class="kpi-metric">
+                        <span class="kpi-val muted" id="kv-dormant">45.1K</span>
+                        <span class="kpi-lbl">Dormant</span>
+                      </div>
+                    </div>
+                    <div class="kpi-bar-wrap">
+                      <div class="kpi-bar-seg seg-green" id="bar-active" style="width:90.2%"></div>
+                      <div class="kpi-bar-seg seg-amber" id="bar-inactive" style="width:6.5%"></div>
+                      <div class="kpi-bar-seg seg-muted" id="bar-dormant" style="width:3.3%"></div>
+                    </div>
+                    <div class="kpi-bar-labels">
+                      <span class="green" id="lbl-active-pct">90.2% Active</span>
+                      <span id="lbl-total">1,369,122 Total</span>
+                    </div>
+                  </div>
+
+                  <!-- Account Status -->
+                  <div class="dash-kpi-card">
+                    <div class="kpi-card-top">
+                      <span class="kpi-title">Account Status</span>
+                      <span class="kpi-icon"><i class="uil uil-wallet"></i></span>
+                    </div>
+                    <div class="kpi-metrics">
+                      <div class="kpi-metric">
+                        <span class="kpi-val green" id="kv-funded">892K</span>
+                        <span class="kpi-lbl">Funded</span>
+                        <span class="kpi-sub" id="lbl-funded-pct">72.3% of accounts</span>
+                      </div>
+                      <div class="kpi-sep"></div>
+                      <div class="kpi-metric">
+                        <span class="kpi-val red" id="kv-unfunded">341K</span>
+                        <span class="kpi-lbl">Unfunded</span>
+                        <span class="kpi-sub" id="lbl-unfunded-pct">27.7% of accounts</span>
+                      </div>
+                    </div>
+                    <div class="kpi-bar-wrap">
+                      <div class="kpi-bar-seg seg-green" id="bar-funded" style="width:72.3%"></div>
+                      <div class="kpi-bar-seg seg-red" id="bar-unfunded" style="width:27.7%"></div>
+                    </div>
+                    <div class="kpi-bar-labels">
+                      <span class="green">Funded</span>
+                      <span class="red">Unfunded</span>
+                    </div>
+                  </div>
+
+                  <!-- TAT & SLA -->
+                  <a href="https://bitool.sterling.ng/superset/dashboard/p/JqkNO1axwvP/" target="_blank" class="dash-kpi-card kpi-clickable">
+                    <div class="kpi-card-top">
+                      <span class="kpi-title">TAT &amp; SLA</span>
+                      <span class="kpi-icon"><i class="uil uil-clock"></i></span>
+                    </div>
+                    <div class="kpi-metrics">
+                      <div class="kpi-metric">
+                        <span class="kpi-val green" id="kv-tat">2.4h</span>
+                        <span class="kpi-lbl">Avg. Turnaround</span>
+                        <span class="kpi-sub">Target: &le;3.0h</span>
+                      </div>
+                      <div class="kpi-sep"></div>
+                      <div class="kpi-metric">
+                        <span class="kpi-val green" id="kv-sla">94.7%</span>
+                        <span class="kpi-lbl">SLA Compliance</span>
+                        <span class="kpi-sub">&#8593; 2.3% vs last mo.</span>
+                      </div>
+                    </div>
+                    <div class="kpi-bar-wrap">
+                      <div class="kpi-bar-seg seg-green" id="bar-sla" style="width:94.7%"></div>
+                      <div class="kpi-bar-seg seg-muted" id="bar-sla-breach" style="width:5.3%"></div>
+                    </div>
+                    <div class="kpi-bar-labels">
+                      <span class="green" id="lbl-sla-pct">94.7% On-Track</span>
+                      <span id="lbl-breach-pct">5.3% Breached</span>
+                    </div>
+                  </a>
+
+                  <!-- Customer Satisfaction -->
+                  <a href="https://vocdashboard.netlify.app/" target="_blank" class="dash-kpi-card kpi-clickable">
+                    <div class="kpi-card-top">
+                      <span class="kpi-title">Customer Satisfaction</span>
+                      <span class="kpi-icon"><i class="uil uil-smile"></i></span>
+                    </div>
+                    <div class="kpi-metrics">
+                      <div class="kpi-metric">
+                        <span class="kpi-val green" id="kv-icsat">80.55%</span>
+                        <span class="kpi-lbl">iCSAT Score</span>
+                      </div>
+                      <div class="kpi-sep"></div>
+                      <div class="kpi-metric">
+                        <span class="kpi-val green" id="kv-pulse">80+</span>
+                        <span class="kpi-lbl">CX Pulse</span>
+                        <span class="kpi-sub">Stage 3 Mobilize</span>
+                      </div>
+                    </div>
+                    <div class="kpi-bar-wrap">
+                      <div class="kpi-bar-seg seg-green" id="bar-icsat" style="width:80.55%"></div>
+                      <div class="kpi-bar-seg seg-muted" id="bar-icsat-gap" style="width:19.45%"></div>
+                    </div>
+                    <div class="kpi-bar-labels">
+                      <span class="green" id="lbl-icsat-pct">80.55% Satisfied</span>
+                      <span>Target: 85%</span>
+                    </div>
+                  </a>
+
+                </div>
+
+                <!-- Product Health Table -->
+                <div class="dash-products">
+                  <div class="prod-tbl-title">Product Health &amp; Uptime Status</div>
+                  <div class="prod-tbl-head">
+                    <span>Product</span>
+                    <span>Status</span>
+                    <span>Uptime</span>
+                    <span>30-Day Track</span>
+                    <span>Incidents Q2</span>
+                    <span>Avg Downtime</span>
+                  </div>
+                  <div class="prod-tbl-body">
+
+                    <div class="prod-tbl-row" id="pt-onebanking-row">
+                      <span class="pt-name">OneBanking</span>
+                      <span class="pt-status up" id="pt-onebanking-status"><span
+                          class="pt-dot up"></span>Operational</span>
+                      <span class="pt-pct green" id="pt-onebanking-pct">99.2%</span>
+                      <div class="pt-bar-wrap">
+                        <div class="pt-fill great" id="pt-onebanking-bar" style="width:99.2%"></div>
+                      </div>
+                      <span class="pt-incidents green" id="pt-onebanking-inc">2 incidents</span>
+                      <span class="pt-downtime green" id="pt-onebanking-dwn">~1.8 hrs</span>
+                    </div>
+
+                    <div class="prod-tbl-row" id="pt-sterlingpro-row">
+                      <span class="pt-name">Sterling Pro</span>
+                      <span class="pt-status up" id="pt-sterlingpro-status"><span
+                          class="pt-dot up"></span>Operational</span>
+                      <span class="pt-pct green" id="pt-sterlingpro-pct">98.8%</span>
+                      <div class="pt-bar-wrap">
+                        <div class="pt-fill good" id="pt-sterlingpro-bar" style="width:98.8%"></div>
+                      </div>
+                      <span class="pt-incidents green" id="pt-sterlingpro-inc">3 incidents</span>
+                      <span class="pt-downtime green" id="pt-sterlingpro-dwn">~2.1 hrs</span>
+                    </div>
+
+                    <div class="prod-tbl-row" id="pt-debitcard-row">
+                      <span class="pt-name">Debit Card</span>
+                      <span class="pt-status up" id="pt-debitcard-status"><span
+                          class="pt-dot up"></span>Operational</span>
+                      <span class="pt-pct green" id="pt-debitcard-pct">99.7%</span>
+                      <div class="pt-bar-wrap">
+                        <div class="pt-fill great" id="pt-debitcard-bar" style="width:99.7%"></div>
+                      </div>
+                      <span class="pt-incidents green" id="pt-debitcard-inc">1 incident</span>
+                      <span class="pt-downtime green" id="pt-debitcard-dwn">~0.5 hrs</span>
+                    </div>
+
+                    <div class="prod-tbl-row warn-row" id="pt-ussd-row">
+                      <span class="pt-name">USSD</span>
+                      <span class="pt-status warn" id="pt-ussd-status"><span class="pt-dot warn"></span>Degraded</span>
+                      <span class="pt-pct amber" id="pt-ussd-pct">97.5%</span>
+                      <div class="pt-bar-wrap">
+                        <div class="pt-fill warn" id="pt-ussd-bar" style="width:97.5%"></div>
+                      </div>
+                      <span class="pt-incidents amber" id="pt-ussd-inc">7 incidents</span>
+                      <span class="pt-downtime amber" id="pt-ussd-dwn">~3.2 hrs</span>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="dash-cta-wrap">
+                  <a href="https://bitool.sterling.ng/superset/dashboard/479/" target="_blank" class="dash-cta-btn">
+                    Click to view command center &nbsp;<i class="uil uil-arrow-right"></i>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="swiper-slide dark-layer">
+              <img src="/assets/images/home/background02.png" alt="">
+              <div class="text-content">
+                <h2 class="title">Service Promise <span>Assured!</span></h2>
+                <p>Our commitment to delivering exceptional customer experience across every touchpoint.</p>
+                <a href="Resources.html#service-pledge"><button class="read-btn">Learn More <i
+                      class="uil uil-arrow-right"></i></button></a>
+              </div>
+            </div>
+            <div class="swiper-slide dark-layer">
+              <img src="/assets/images/home/background03.png" alt="">
+              <div class="text-content">
+                <h2 class="title">CX Manifesto <span>Anchored!</span></h2>
+                <p>Our vision to place the customer at the centre of every decision and interaction.</p>
+                <a href="Resources.html#manifesto-videos"><button class="read-btn">Learn More <i
+                      class="uil uil-arrow-right"></i></button></a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="/assets/images/home/Background04.png" alt="">
+              <div class="text-content">
+                <h2 class="title">OneX Metrics <span>Overview!</span></h2>
+                <p><span style="font-size: large;">CX Maturity Score :</span> A comprehensive assessment of Sterling's
+                  customer experience capabilities and performance. <br>Our current level stands at <span
+                    style="color: #b29d10;">Stage 3 Mobilize</span></p>
+                <hr>
+                <p><span style="font-size: large;">OneX Pulse :</span> An enterprise assessment to measure employee
+                  understanding of service expectations and standards. <br>Latest Employee CX Pulse: 80+</p>
+                <hr>
+                <p><span style="font-size: large;">iCSAT :</span> Employee satisfaction measurement tool that helps us
+                  gauge inter-depatmental collaboration and satisfaction levels. <br>Bankwide Internal Customer
+                  Satisfaction Score: <span style="color: #b29d10;">80.55%</span></p>
+                <a href="/Resources.html"><button class="read-btn">Learn More <i
+                      class="uil uil-arrow-right"></i></button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slider-thumbs swiper">
+          <div class="swiper-wrapper thumbs-container">
+            <img src="assets/images/home/onexDashboard.png" class="swiper-slide" alt="">
+            <img src="assets/images/home/background02.png" class="swiper-slide" alt="">
+            <img src="assets/images/home/background03.png" class="swiper-slide" alt="">
+            <img src="assets/images/home/Background04.png" class="swiper-slide" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--========== About Project OneX ==========-->
+  <section class="sue-section nav-menu-section" id="about">
+    <div class="sue-container sue-sub-container">
+      <div class="sue-wrapper">
+        <div class="section-title about-title">
+          <h3>About Project <span class="one-part">One</span><span style="color: #b22810;">X</span></h3>
+          <p>Our Journey to Customer Obsession</p>
+        </div>
+        <div class="section-content">
+          <div class="about-img">
+            <img src="assets/images/avatar images/AboutOneX01.png" alt="">
+          </div>
+          <div class="about-details">
+            <div class="about-info">
+              <h4 class="iam">Elevating the Sterling One Customer experience</h4>
+              <p class="about-description">To transform Sterling Bank's customer experience by institutionalizing a
+                strategic Transformation Office that drives a culture of customer obsession, enhances trust and
+                happiness, and enables data-driven service innovation, that is fully aligned with the One Customer
+                vision and designed to deliver sustainable competitive advantage.<br><br>Our future is a
+                Customer-obsessed Sterling, where every action is hinged on delivering exceptional value. </p>
+            </div>
+            <div class="pro-list">
+              <div class="pro-card">
+                <span>1.1K+</span>
+                <p>Employees Rewarded</p>
+              </div>
+              <div class="pro-card">
+                <span>1.5K+</span>
+                <p>Employees Attended SLS Sessions</p>
+              </div>
+              <div class="pro-card">
+                <span>5K+</span>
+                <p>Digital Service Commitments</p>
+              </div>
+            </div>
+            <div class="about-buttons">
+              <a href="#" class="sue-btn-link">
+                <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== Transformation Journey (Services) ==========-->
+  <section class="sue-section nav-menu-section" id="service">
+    <div class="sue-container sue-sub-container">
+      <div class="sue-wrapper">
+        <div class="section-title">
+          <h3>CX Transformation Journey</h3>
+          <p>CX Transformation Journey</p>
+        </div>
+        <div class="section-content">
+          <div class="service-container">
+
+            <div class="card-with-modal">
+              <div class="service-card">
+                <div class="service-info">
+                  <i class="ri-stack-fill service-icon"></i>
+                  <h4>Phase 1</h4>
+                  <p>Set Up</p>
+                  <a class="service-see-more">See more <i class="ri-arrow-right-up-fill"></i></a>
+                </div>
+              </div>
+
+              <div class="service-modal-backdrop">
+                <div class="service-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-title">
+                      <h3>Phase 1</h3>
+                      <h4>Set Up</h4>
+                      <p>Establish CX governance, leadership alignment and foundational infrastructure for
+                        transformation.</p>
+                    </div>
+                    <!-- <h4>Set Up</h4> -->
+                    <ul class="my-services">
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Formalise and announce the CX Transformation Project.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Set up the CX Transformation Project Team.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Conduct CX Maturity Audit (Alt Bank inclusive).</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Carry out a comprehensive Internal Customer Satisfaction Assessment.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Deliver initial CX immersion programme for ExCo.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Design and set up the CX Centre of Excellence (A Dedicated Command Centre).</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal">
+              <div class="service-card">
+                <div class="service-info">
+                  <i class="ri-clockwise-2-line service-icon"></i>
+                  <h4>Phase 2</h4>
+                  <p>Immersion</p>
+                  <a class="service-see-more">See more <i class="ri-arrow-right-up-fill"></i></a>
+                </div>
+              </div>
+
+              <div class="service-modal-backdrop">
+                <div class="service-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-title">
+                      <h3>Phase 2</h3>
+                      <h4>Immersion</h4>
+                      <p>Embed CX culture across teams while improving service systems and integrating CX
+                        accountability.</p>
+                    </div>
+                    <!-- <h4>Immersion</h4> -->
+                    <ul class="my-services">
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>All-staff CX immersion & culture alignment program.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Optimise the omni-channel issue resolution system and roll-out service recovery framework.
+                        </p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Integrate CX KPIs in performance reviews and appraisals.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal">
+              <div class="service-card">
+                <div class="service-info">
+                  <i class="ri-bar-chart-box-fill service-icon"></i>
+                  <h4>Phase 3</h4>
+                  <p>Optimization</p>
+                  <a class="service-see-more">See more <i class="ri-arrow-right-up-fill"></i></a>
+                </div>
+              </div>
+
+              <div class="service-modal-backdrop">
+                <div class="service-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-title">
+                      <h3>Phase 3</h3>
+                      <h4>Optimization</h4>
+                      <p>Leverage AI, analytics and insights to optimize journeys and proactively improve customer
+                        experience.</p>
+                    </div>
+                    <!-- <h4>Optimization</h4> -->
+                    <ul class="my-services">
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Amplify advanced AI & predictive analytics.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Refine CX processes using customer insights.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal">
+              <div class="service-card">
+                <div class="service-info">
+                  <i class="ri-align-item-bottom-fill service-icon"></i>
+                  <h4>Phase 4</h4>
+                  <p>Continuous Improvement</p>
+                  <a class="service-see-more">See more <i class="ri-arrow-right-up-fill"></i></a>
+                </div>
+              </div>
+
+              <div class="service-modal-backdrop">
+                <div class="service-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-title">
+                      <h3>Phase 4</h3>
+                      <h4>Continuous Improvement</h4>
+                      <p>Sustain CX through governance loops, financial impact measurement and continuous learning.</p>
+                    </div>
+                    <!-- <h4>Continuous Improvement</h4> -->
+                    <ul class="my-services">
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Measure ROI from CX enhancements.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Embed ongoing CX learning loops.</p>
+                      </li>
+                      <li><i class="ri-checkbox-circle-fill"></i>
+                        <p>Institutionalize long-term CX governance.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== Initiatives & Programs (Portfolio) ==========-->
+  <section class="sue-section nav-menu-section" id="portfolio">
+    <div class="sue-container sue-sub-container">
+      <div class="sue-wrapper">
+        <div class="section-title">
+          <h3>Initiatives & Programs</h3>
+          <p>Explore CX Initiatives</p>
+        </div>
+        <div class="portfolio-tabs">
+          <a class="tab-btn active" data-filter="all">All</a>
+          <a class="tab-btn" data-filter="insights-reports">Insights/Reports</a>
+          <a class="tab-btn" data-filter="recognition-accountability">Recognition</a>
+          <a class="tab-btn" data-filter="culture">Culture</a>
+          <a class="tab-btn" data-filter="training">Training</a>
+        </div>
+        <div class="section-content">
+          <div class="portfolio-container">
+
+            <div class="card-with-modal insights-reports">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/Maturity Assessment.jpg" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Insights/Reports</span>
+                  <h4>Maturity Assessment</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/Maturity Assessment.jpg" alt="">
+                    </div>
+                    <h4 class="modal-title">Maturity Assessment</h4>
+                    <p class="description">The Customer Experience (CX) maturity assessment evaluates how effectively CX
+                      is embedded across the organization, and defines the path toward a more consistent, insight-driven
+                      experience.</p>
+                    <!-- <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat ipsam quod
+                      odio ad, quibusdam consectetur architecto magni tenetur vero at aspernatur possimus fuga nostrum
+                      eligendi, earum quisquam dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptatem inventore earum corporis est quo praesentium beatae laudantium nisi reiciendis eius,
+                      voluptate tenetur ullam autem dignissimos, nulla minus repellat, maiores sunt.</p> -->
+
+                    <a href="Resources.html#maturity-assessment" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal culture">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/CX Immersion.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Culture</span>
+                  <h4>CX Immersion</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/CX Immersion.png" alt="">
+                    </div>
+                    <h4 class="modal-title">CX Immersion</h4>
+                    <strong>
+                      <p>Leading the experience, not just managing it.</p>
+                    </strong>
+                    <p class="description">Great customer experience starts with leadership. These sessions equipped our
+                      leaders to not just understand OneX, but to bring it to life within their teams. Through clear
+                      direction, shared understanding, and consistent messaging, we ensure that the One Customer, One
+                      Experience we promise is the experience we deliver-everywhere.</p>
+
+
+                    <a href="Resources.html#immersion" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal training">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/Manifesto.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Training</span>
+                  <h4>The Manifesto</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/Manifesto.png" alt="">
+                    </div>
+                    <h4 class="modal-title">The Manifesto</h4>
+                    <strong>
+                      <p>This is what we believe about experience.</p>
+                    </strong>
+                    <p class="description">The OneX Manifesto is our heartbeat. It captures the mindset and energy we
+                      bring to every One Customer interaction, human, intentional, and consistent. It’s what connects us
+                      all, no matter our role, and reminds us that great experiences don’t happen by chance… they happen
+                      because of us.</p>
+
+                    <a href="Resources.html#Manifesto" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal culture">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/Service Promise.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Culture</span>
+                  <h4>Service Promise</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/Service Promise.png" alt="">
+                    </div>
+                    <h4 class="modal-title">Service Promise</h4>
+                    <strong>
+                      <p>This is how we show up-every time.</p>
+                    </strong>
+                    <p class="description">Our Service Promise is more than words-it’s our everyday commitment to doing
+                      right by Our One customer. It sets the tone for how we listen, respond, and deliver, no matter the
+                      situation. It reminds us that every interaction matters, and gives us a shared standard we can all
+                      stand behind with confidence and pride.</p>
+
+                    <a href="Resources.html#service-pledge" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal insights-reports">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/ICSAT.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Insights/Reports</span>
+                  <h4>iCSAT Exercise</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/ICSAT.png" alt="">
+                    </div>
+                    <h4 class="modal-title">iCSAT Exercise</h4>
+                    <p class="description">The Internal Customer Satisfaction Survey (iCSAT), forms part of Sterling
+                      Bank’s organization-wide customer
+                      experience and culture transformation agenda. It assesses employee perceptions of service
+                      delivery, the effectiveness of internal support across teams, and the impact of these interactions
+                      on the customer experience.</p>
+
+                    <a href="Resources.html#icsat" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal training">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/OneX Pulse.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Training</span>
+                  <h4>OneX Pulse</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/OneX Pulse.png" alt="">
+                    </div>
+                    <h4 class="modal-title">OneX Pulse</h4>
+                    <strong>
+                      <p>A clear view of how we’re really doing.</p>
+                    </strong>
+                    <p class="description">The OneX Pulse Assessment keeps us honest, focused, and continuously
+                      improving. It gives us a clear view of how well we are aligned with OneX, so we can show up
+                      consistently and deliver what truly matters: One Customer, One Experience.</p>
+
+                    <a href="Resources.html#onexpulse" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal recognition-accountability">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/Service Excellence.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Recognition</span>
+                  <h4>Service Excellence Reward</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/Service Excellence.png" alt="">
+                    </div>
+                    <h4 class="modal-title">Service Excellence Reward</h4>
+                    <strong>
+                      <p>Because great service deserves to be rewarded.</p>
+                    </strong>
+                    <p class="description">Delivering exceptional experiences isn’t optional-and it shouldn’t go
+                      unnoticed. The Monthly Service Excellence Payment recognizes the effort, ownership, and
+                      consistency it takes to serve our One Customer well. It’s our way of saying: when you show up for
+                      the customer, we show up for you too.</p>
+
+                    <a href="#" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal recognition-accountability">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/OneX Stars.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Recognition</span>
+                  <h4>OneX Stars</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/OneX Stars.png" alt="">
+                    </div>
+                    <h4 class="modal-title">OneX Stars</h4>
+                    <strong>
+                      <p>Celebrating the moments that make us proud.</p>
+                    </strong>
+                    <p class="description">OneX Stars shines a spotlight on employees who go above and beyond for our
+                      One customer. These are the moments that define who we are-thoughtful actions, extra effort, real
+                      impact. By celebrating them, we inspire more of them and build a culture where excellence becomes
+                      the norm.</p>
+
+                    <a href="https://sway.cloud.microsoft/PA0b29mxxpLdCe9h?ref=Link" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal insights-reports">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/Command Centre.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Insights/Reports</span>
+                  <h4>Command Centre</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/Command Centre.png" alt="">
+                    </div>
+                    <h4 class="modal-title">Command Centre</h4>
+                    <p class="description">A centralized hub bringing service and experience metrics to life in near
+                      real-time. Through an interactive interface and visualization screens, teams gain visibility into
+                      key service touchpoints enabling operational monitoring and timely interventions.</p>
+
+                    <a href="https://bitool.sterling.ng/superset/dashboard/479/" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="card-with-modal insights-reports">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/portfolio images/portfolio-img-08.jpg" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Insights/Reports</span>
+                  <h4>OneX Customer Loyalty</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/portfolio images/portfolio-img-08.jpg" alt="">
+                    </div>
+                    <h4 class="modal-title">OneX Customer Loyalty</h4>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat ipsam quod
+                      odio ad, quibusdam consectetur architecto magni tenetur vero at aspernatur possimus fuga nostrum
+                      eligendi, earum quisquam dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptatem inventore earum corporis est quo praesentium beatae laudantium nisi reiciendis eius,
+                      voluptate tenetur ullam autem dignissimos, nulla minus repellat, maiores sunt.</p>
+
+                    <a href="#" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="card-with-modal insights-reports">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/Service Failure.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Insights/Reports</span>
+                  <h4>Service Failure Framwork</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/Service Failure.png" alt="">
+                    </div>
+                    <h4 class="modal-title">Service Failure management Framework</h4>
+                    <strong>
+                      <p>Turning service failures into moments that build trust.</p>
+                    </strong>
+                    <p class="description">Things won’t always go as planned - but what truly defines us is how we
+                      respond when they don’t. The Service Failure Management Framework gives us a clear, structured way
+                      to take ownership, act quickly, and recover effectively when service falls short.</p>
+
+                    <p class="description">It guides us on how to acknowledge issues, fix them with urgency, communicate
+                      transparently, and restore customer confidence. More importantly, it helps us go beyond quick
+                      fixes-by identifying root causes and preventing repeat occurrences.</p>
+
+                    <p class="description">Because every service failure is an opportunity:
+                      to learn, to improve, and to show our customers that they can trust us to make things right.
+                    </p>
+
+                    <a href="Resources.html#service-failure-notice-board" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-with-modal insights-reports">
+              <div class="portfolio-card">
+                <div class="card-img">
+                  <img src="assets/images/Initiatives/Service Disruption.png" alt="">
+                </div>
+                <div class="card-info">
+                  <span>Insights/Reports</span>
+                  <h4>Service Disruption Framwork</h4>
+                  <i class="ri-arrow-right-up-line card-btn"></i>
+                </div>
+              </div>
+
+              <div class="portfolio-modal-backdrop">
+                <div class="portfolio-modal">
+                  <a class="modal-close-btn"><i class="ri-close-line"></i></a>
+                  <div class="modal-content">
+                    <div class="modal-img">
+                      <img src="assets/images/Initiatives/Service Disruption.png" alt="">
+                    </div>
+                    <h4 class="modal-title">Service Disruption Management Framework</h4>
+                    <strong>
+                      <p>Staying in control-even when things don’t go as planned.</p>
+                    </strong>
+                    <p class="description">Service disruptions happen-but how we respond is what customers remember. The
+                      OneX Service Disruption Management Framework equips us to act quickly, communicate clearly, and
+                      stay coordinated when services are impacted.</p>
+
+                    <p class="description">It provides a structured approach to managing disruptions from start to
+                      finish-ensuring customers are informed, supported, and never left in the dark. From early
+                      detection to resolution and recovery, it helps us reduce confusion, manage expectations, and
+                      maintain trust, even in challenging moments.</p>
+
+                    <p class="description">Most importantly, it brings everyone together-so we respond as one team, with
+                      clarity, speed, and purpose.</p>
+
+                    <p class="description">Because in moments of disruption, consistency, transparency, and ownership
+                      make all the difference.</p>
+
+                    <a href="#" class="sue-btn-link">
+                      <div class="sue-main-btn fill-btn">Read More <i class="ri-user-follow-line"></i><i
+                          class="uil uil-arrow-right"></i></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="section-title">
+          <h3>OneX Stars</h3>
+          <p>The "Extra Mile" Story of Our Awesome Sterling Humans</p>
+        </div>
+        <div class="section-content">
+          <div class="swiper sue-client-swiper">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="client-img">
+                  <img src="assets/images/client images/OneXStar01.png" alt="">
+                </div>
+                <div class="client-details">
+                  <h3>Canice Adie</h3>
+                  <span>Service Ambassador</span>
+                  <p>When a customer had almost lost confidence in the OneBank onboarding process due to a device
+                    change, Canice stepped in at a critical moment. With calm, supportive engagement, he resolved the
+                    issue seamlessly and restored her satisfaction. His steady follow-through strengthened the
+                    relationship and rebuilt trust. This is OneX in action: listen with empathy, take ownership, and
+                    follow through completely.
+                    <br><span style="color: #b22810; font-size: 1.1em;">OneX Behaviour</span>: Empathy | Ownership |
+                    Accountability
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="client-img">
+                  <img src="assets/images/client images/OneXStar02.png" alt="">
+                </div>
+                <div class="client-details">
+                  <h3>Abosede Adebanjo</h3>
+                  <span>Service Ambassador</span>
+                  <p>Across several visits to the Abule Egba Branch, Abosede became the customer's anchor of
+                    calm-professional, attentive, and always ready to help. She turned a potentially frustrating
+                    experience into a simple, stress-free one by patiently explaining the OneBank transaction limit with
+                    clarity, confidence, and genuine care. This is the OneX standard: show up, own the moment, and leave
+                    every customer feeling heard, helped, and valued.
+                    <br><span style="color: #b22810; font-size: 1.1em;">OneX Behaviour</span>: Ownership | Excellence |
+                    Consistency
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="client-img">
+                  <img src="assets/images/client images/OneXStar03.png" alt="">
+                </div>
+                <div class="client-details">
+                  <h3>Meshach Bitrus</h3>
+                  <span>Service Ambassador</span>
+                  <p>When a corporate account holder required urgent support to reactivate their account, Meshach acted
+                    swiftly. He facilitated prompt reactivation, ensured the Sterling Pro application was fully
+                    operational, and personally visited the customer's office to confirm resolution. This is the OneX
+                    service standard: step in with urgency, take full ownership, go the extra mile.
+                    <br><span style="color: #b22810; font-size: 1.1em;">OneX Behaviour</span>: Ownership | Excellence |
+                    Consistency
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="client-img">
+                  <img src="assets/images/client images/OneXStar04.png" alt="">
+                </div>
+                <div class="client-details">
+                  <h3>Omoyosola Bakare</h3>
+                  <span>Service Ambassador</span>
+                  <p>After facing challenges opening a foreign-currency account elsewhere, the customer found relief
+                    through Omoyosola's seamless service. She simplified the journey, quickly opening savings and
+                    domiciliary accounts, enabling funding, issuing cards, and staying committed until a
+                    transaction-limit issue was fully resolved. When offered a personal gift, she respectfully declined,
+                    choosing professionalism over personal gain.
+                    <br><span style="color: #b22810; font-size: 1.1em;">OneX Behaviour</span>: Ownership | Excellence |
+                    Consistency
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="client-img">
+                  <img src="assets/images/client images/OneXStar05.png" alt="">
+                </div>
+                <div class="client-details">
+                  <h3>Hamdalah Akande</h3>
+                  <span>Complaint Resolution Officer</span>
+                  <p>When a customer faced repeated account restrictions, Hamdalah took full ownership. She investigated
+                    the issue, coordinated the account upgrade with relevant teams, and kept the customer informed at
+                    every stage. Her calm, consistent communication restored both access and confidence.
+                    <br><span style="color: #b22810; font-size: 1.1em;">OneX Behaviour</span>: Ownership | Clear |
+                    Communication | Customer First
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="client-img">
+                  <img src="assets/images/client images/OneXStar06.png" alt="">
+                </div>
+                <div class="client-details">
+                  <h3>Onyedika Ebubechukwu</h3>
+                  <span>Rapid Resolution Officer</span>
+                  <p>A customer was frustrated by excessive Specta facility debits. Onyedika stepped in, reviewed the
+                    account, cut through the complexity, and worked with backend teams and the domiciled branch to
+                    reverse the excess charges. He kept the customer informed throughout, reinforcing trust.
+                    <br><span style="color: #b22810; font-size: 1.1em;">OneX Behaviour</span>: Ownership | Simplicity |
+                    Customer First
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="client-img">
+                  <img src="assets/images/client images/OneXStar07.png" alt="">
+                </div>
+                <div class="client-details">
+                  <h3>Oluwabunmi Ifederu</h3>
+                  <span>Service Ambassador</span>
+                  <p>When a customer needed help with account opening, Oluwabunmi ensured nothing was left undone. She
+                    guided the process, verified details, and completed the request efficiently, addressing every
+                    question along the way.
+                    <br><span style="color: #b22810; font-size: 1.1em;">OneX Behaviour</span>: Human Simplicity | Clear
+                    Communication
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="swiper-button-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="ri-arrow-left-s-line"></i>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <a href="https://sway.cloud.microsoft/PA0b29mxxpLdCe9h?ref=Link" target="_blank" class="sue-btn-link">
+            <div class="sue-main-btn fill-btn">View all OneX Stars <i class="ri-user-follow-line"></i><i
+                class="uil uil-arrow-right"></i></div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--========== Virtual Monitoring (Resume) ==========-->
+  <section class="sue-section nav-menu-section" id="resume">
+    <div class="sue-container sue-sub-container">
+      <div class="sue-wrapper">
+        <div class="section-title">
+          <h3>Virtual Monitoring</h3>
+          <p>Providing View To Key Customer Impacting Metrics & Indicators</p>
+        </div>
+        <div class="resume-tabs">
+          <!-- <a class="tab-btn active"><i class="uil uil-desktop"></i>Virtual Monitoring View</a> -->
+          <a class="tab-btn"><i class="ri-user-settings-line"></i>Command Centre</a>
+          <a class="tab-btn"><i class="uil uil-megaphone"></i>VOC Dashboard</a>
+
+        </div>
+
+        <div class="resume-tab-content personal-skills">
+          <div class="skill-container">
+
+            <a href="#" class="skill-card" data-dashboard="virtual-monitoring">
+              <div class="skill-title">
+                <i class="ri-macbook-fill"></i>
+                <span>Virtual Monitoring View</span>
+              </div>
+              <div class="skill-categories">
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>CRM Overview</h5>
+                    <span>Service Delivery</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>Customer Interaction</h5>
+                    <span>Engagement Performance</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>Channel Monitoring</h5>
+                    <span>Adoption and Usage</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>Customer Health</h5>
+                    <span>Activity, Restriction, Onboarding etc</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>Transaction Performance</h5>
+                    <span>Successful vs Unsuccessful</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://bitool.sterling.ng/superset/dashboard/479/" target="_blank"
+              class="skill-card command-centre-card">
+              <div class="command-centre-image">
+                <img src="/assets/images/home/Command Centre.png" alt="Command Centre">
+              </div>
+
+              <div class="command-centre-overlay">
+                <div class="skill-title">
+                  <i class="ri-macbook-fill"></i>
+                  <span>Command Centre</span>
+                </div>
+
+                <button class="command-btn">
+                  Click To View Command Centre
+                </button>
+              </div>
+            </a>
+
+            <!-- <a href="#" class="skill-card" data-dashboard="voc-dashboard">
+                <div class="skill-title">
+                  <i class="ri-server-fill"></i>
+                  <span>VOC Dashboard</span>
+                </div>
+                <div class="skill-categories">
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>NPS</h5>
+                      <span>Net Promoter Score</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>CSAT</h5>
+                      <span>Customer Satisfaction</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>CES</h5>
+                      <span>Customer Effort Score</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>Customer Feedback</h5>
+                      <span>Touchpoints</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>Social Sentiments</h5>
+                      <span>Intermediate</span>
+                    </div>
+                  </div>
+                </div>
+              </a> -->
+          </div>
+        </div>
+
+        <div class="resume-tab-content personal-skills">
+          <div class="skill-container">
+
+            <!-- <a href="#" class="skill-card">
+                <div class="skill-title">
+                  <i class="ri-macbook-fill"></i>
+                  <span>Virtual Monitoring View</span>
+                </div>
+                <div class="skill-categories">
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>CRM Overview</h5>
+                      <span>Service Delivery</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>Customer Interaction</h5>
+                      <span>Engagement Performance</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>Channel Monitoring</h5>
+                      <span>Adoption and Usage</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>Customer Health</h5>
+                      <span>Activity, Restriction, Onboarding etc</span>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <div class="skill-info">
+                      <h5>Transaction Performance</h5>
+                      <span>Successful vs Unsuccessful</span>
+                    </div>
+                  </div>
+                </div>
+              </a> -->
+
+
+
+            <a href="https://vocdashboard.netlify.app" target="_blank" class="skill-card command-centre-card">
+              <div class="command-centre-image">
+                <img src="/assets/images/home/VOC Dashboard.png" alt="Command Centre">
+              </div>
+
+              <div class="command-centre-overlay">
+                <div class="skill-title">
+                  <i class="ri-server-fill"></i>
+                  <span>VOC Dashboard</span>
+                </div>
+
+                <button class="command-btn">
+                  Click To View VOC Dashboard
+                </button>
+              </div>
+            </a>
+
+            <a href="https://vocdashboard.netlify.app/#" target="_blank" class="skill-card">
+              <div class="skill-title">
+                <i class="ri-server-fill"></i>
+                <span>VOC Dashboard</span>
+              </div>
+              <div class="skill-categories">
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>NPS</h5>
+                    <span>Net Promoter Score</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>CSAT</h5>
+                    <span>Customer Satisfaction</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>CES</h5>
+                    <span>Customer Effort Score</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>Customer Feedback</h5>
+                    <span>Touchpoints</span>
+                  </div>
+                </div>
+                <div class="skill">
+                  <i class="ri-checkbox-circle-fill"></i>
+                  <div class="skill-info">
+                    <h5>Social Sentiments</h5>
+                    <span>Intermediate</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--========== Contact Us ==========-->
+  <section class="sue-section nav-menu-section" id="contact">
+    <div class="sue-container sue-sub-container">
+      <div class="sue-wrapper">
+        <div class="section-title">
+          <h3>Contact Us</h3>
+          <p>Get In Touch</p>
+        </div>
+        <div class="section-content">
+          <div class="contact-container">
+
+            <div class="contact-info">
+              <h3>Contact Info</h3>
+              <ul class="contact-details">
+
+                <li class="contact-item">
+                  <div class="contact-icon">
+                    <i class="ri-mail-send-fill"></i>
+                  </div>
+                  <div class="contact-method">
+                    <span>E-mail</span>
+                    <h4>projectonex@sterling.ng</h4>
+                    <a href="mailto:projectonex@sterling.ng" target="_blank"><span>Send <i
+                          class="ri-arrow-right-up-line"></i></span></a>
+                  </div>
+                </li>
+
+                <!-- <li class="contact-item">
+                  <div class="contact-icon">
+                    <i class="ri-whatsapp-line"></i>
+                  </div>
+                  <div class="contact-method">
+                    <span>Whatsapp</span>
+                    <h4>+94 111-222-333</h4>
+                    <a href="https://wa.me/+94111222333?text=Hello%20there!%20How%20can%20I%20help%20you?" target="_blank"><span>Send <i class="ri-arrow-right-up-line"></i></span></a>
+                  </div>
+                </li> -->
+
+                <!-- <li class="contact-item">
+                  <div class="contact-icon">
+                    <i class="ri-messenger-fill"></i>
+                  </div>
+                  <div class="contact-method">
+                    <span>Messenger</span>
+                    <h4>Sue.Ayers-fb123</h4>
+                    <a href="https://m.me/codingsnow?text=Hello%20and%20Welcome!" target="_blank"><span>Send <i class="ri-arrow-right-up-line"></i></span></a>
+                  </div>
+                </li> -->
+
+              </ul>
+
+              <!-- <h3>Social Info</h3>
+              <ul class="contact-social-links">
+                <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+                <li><a href=""><i class="ri-twitter-x-fill"></i></a></li>
+                <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
+              </ul> -->
+
+            </div>
+
+            <div class="contact-form-body">
+              <h2>Let's transform CX <span>together.</span></h2>
+              <p>Please fill out the form on this section to contact us.</p>
+              <form action="" method="POST" id="sue-contact-form">
+                <div class="input-group">
+                  <input type="text" name="full-name" placeholder="Name *" required>
+                </div>
+                <div class="input-group">
+                  <input type="text" name="email" placeholder="Email *" required>
+                </div>
+                <div class="input-group">
+                  <input type="text" name="subject" placeholder="Your Subject *" required>
+                </div>
+                <div class="input-group">
+                  <textarea name="message" placeholder="Your Message *" required></textarea>
+                </div>
+                <div class="input-group send-message">
+                  <button class="sue-main-btn fill-btn submit-btn" name="submit" type="submit">Send Message</button>
+                  <div class="contact-form-alert"></div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== Footer ==========-->
+  <footer class="sue-footer">
+    <div class="sue-container">
+      <div class="inner">
+        <div class="sue-logo">
+          <a href="#home"><span>One<span style="color: #b22810;">X</span></span></a>
+        </div>
+        <ul class="footer-menu">
+          <li class="menu-item"><a href="#about">About</a></li>
+          <li class="menu-item"><a href="#service">Transformation Journey</a></li>
+          <li class="menu-item"><a href="#portfolio">Initiatives & Programs</a></li>
+          <li class="menu-item"><a href="#resume">Virtual Monitoring</a></li>
+          <li class="menu-item"><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copy-right">Â© All rights reserved by <a href="">Customer Intelligence</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!--========== Swiper JS ==========-->
+  <script src="assets/js/swiper-bundle.min.js"></script>
+
+  <!--========== EmailJS ==========-->
+  <script src="assets/js/email.min.js"></script>
+
+  <!--========== Main javascript ==========-->
+  <script src="assets/js/main.js"></script>
+
+  <script src="assets/js/mainhero.js"></script>
+
+  <!--========== Dashboard live data ==========-->
+  <script src="assets/js/dashboard-live.js"></script>
+
+
+
+  <!-- ========== Chale Widget Fonts ========== -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap"
+    rel="stylesheet">
+
+  <!-- ========== Chale Widget Styles ========== -->
+  <style>
+    /* ─── FAB BUTTON ─────────────────────────────────────── */
+    .chale-fab {
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      z-index: 9990;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    /* Pulsing rings */
+    .chale-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(178, 40, 16, 0.5);
+      animation: chale-ripple 2.4s ease-out infinite;
+      pointer-events: none;
+    }
+
+    .chale-ring:nth-child(2) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes chale-ripple {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: scale(2.1);
+        opacity: 0;
+      }
+    }
+
+    /* Main button */
+    .chale-btn {
+      position: relative;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #b22810;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(178, 40, 16, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+      animation: chale-pop-in 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.4) 0.5s both;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
+      z-index: 1;
+    }
+
+    @keyframes chale-pop-in {
+      0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+      }
+
+      70% {
+        transform: scale(1.12) rotate(5deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    .chale-btn:hover {
+      background: #961f0d;
+      transform: scale(1.08);
+      box-shadow: 0 12px 40px rgba(178, 40, 16, 0.6), 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .chale-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Icon swap: chat icon by default, X when open */
+    .chale-icon-chat,
+    .chale-icon-close {
+      position: absolute;
+      transition: opacity 0.2s ease, transform 0.3s ease;
+    }
+
+    .chale-icon-close {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.6);
+    }
+
+    .chale-widget-open .chale-icon-chat {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.6);
+    }
+
+    .chale-widget-open .chale-icon-close {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    /* Tooltip label */
+    .chale-label {
+      position: absolute;
+      bottom: 72px;
+      right: 0;
+      background: rgba(15, 15, 15, 0.92);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .chale-label::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      right: 22px;
+      width: 8px;
+      height: 8px;
+      background: rgba(15, 15, 15, 0.92);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transform: rotate(45deg);
+    }
+
+    .chale-fab:hover .chale-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .chale-widget-open .chale-label {
+      opacity: 0 !important;
+    }
+
+    /* Notification dot */
+    .chale-notif {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border: 2.5px solid #b22810;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      color: #b22810;
+      z-index: 2;
+      animation: chale-pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.4) 1.5s both;
+    }
+
+    .chale-notif.hidden {
+      display: none;
+    }
+
+    /* ─── BACKDROP ───────────────────────────────────────── */
+    .chale-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      z-index: 9991;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .chale-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ─── CHAT PANEL ─────────────────────────────────────── */
+    /* .chale-panel {
+    position: fixed;
+    bottom: 116px;
+    right: 36px;
+    width: 430px;
+    height: 640px;
+    z-index: 9992;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+      0 32px 80px rgba(0,0,0,0.5),
+      0 8px 24px rgba(0,0,0,0.3),
+      0 0 0 1px rgba(255,255,255,0.06);
+    transform: translateY(24px) scale(0.94);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity   0.25s ease;
+    font-family: 'DM Sans', sans-serif;
+  } */
+
+    .chale-panel {
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
+
+      width: min(430px, calc(100vw - 32px));
+      height: min(640px, calc(100vh - 120px));
+
+      z-index: 9992;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      box-shadow:
+        0 32px 80px rgba(0, 0, 0, 0.5),
+        0 8px 24px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+
+      transform: translateY(24px) scale(0.94);
+      opacity: 0;
+      pointer-events: none;
+
+      transition:
+        transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.25s ease;
+
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .chale-panel.open {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ─── CHALE INTERNAL STYLES ──────────────────────────── */
+
+    /* Chale dark theme (default) */
+    .chale-panel {
+      --cp-bg: #0a0a0a;
+      --cp-surface: #141414;
+      --cp-surface2: #1e1e1e;
+      --cp-border: #2a2a2a;
+      --cp-red: #e5151a;
+      --cp-red-dim: #b01015;
+      --cp-red-glow: rgba(229, 21, 26, 0.12);
+      --cp-text: #f0f0f0;
+      --cp-muted: #666666;
+      --cp-header-bg: rgba(10, 10, 10, 0.97);
+      --cp-input-bg: rgba(10, 10, 10, 0.85);
+      --cp-bg-glow: rgba(229, 21, 26, 0.06);
+      --cp-user-bg: rgba(229, 21, 26, 0.12);
+      --cp-user-border: rgba(229, 21, 26, 0.25);
+      --cp-label: #cc3333;
+      --cp-logo-w: #ffffff;
+      --cp-sub: #888888;
+      --cp-badge: #ff6666;
+      --cp-active: #ff8888;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+    }
+
+    /* Chale light theme — syncs with host page theme btn */
+    .chale-panel.light-theme {
+      --cp-bg: #f7f7f8;
+      --cp-surface: #ffffff;
+      --cp-surface2: #f0f0f2;
+      --cp-border: #e2e2e6;
+      --cp-red: #d61419;
+      --cp-red-dim: #a30f13;
+      --cp-red-glow: rgba(214, 20, 25, 0.10);
+      --cp-text: #1a1a1a;
+      --cp-muted: #6b6b73;
+      --cp-header-bg: rgba(255, 255, 255, 0.97);
+      --cp-input-bg: rgba(255, 255, 255, 0.9);
+      --cp-bg-glow: rgba(214, 20, 25, 0.05);
+      --cp-user-bg: rgba(214, 20, 25, 0.09);
+      --cp-user-border: rgba(214, 20, 25, 0.22);
+      --cp-label: #b00d11;
+      --cp-logo-w: #1a1a1a;
+      --cp-sub: #4a4a52;
+      --cp-badge: #b00d11;
+      --cp-active: #a30f13;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+    }
+
+    /* glow orb behind panel */
+    .chale-panel::before {
+      content: '';
+      position: absolute;
+      top: -15%;
+      right: -10%;
+      width: 55%;
+      height: 45%;
+      background: radial-gradient(ellipse, var(--cp-bg-glow) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header */
+    .cp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--cp-border);
+      background: var(--cp-header-bg);
+      backdrop-filter: blur(20px);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .cp-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+      letter-spacing: -0.2px;
+    }
+
+    .cp-brand-w {
+      color: var(--cp-logo-w);
+      transition: color 0.25s;
+    }
+
+    .cp-brand-r {
+      color: var(--cp-red);
+    }
+
+    .cp-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--cp-red-glow);
+      border: 1px solid var(--cp-user-border);
+      border-radius: 100px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: var(--cp-badge);
+      font-weight: 500;
+    }
+
+    .cp-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--cp-red);
+      border-radius: 50%;
+      animation: cp-blink 2s ease-in-out infinite;
+    }
+
+    @keyframes cp-blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.25;
+      }
+    }
+
+    .cp-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Theme toggle inside panel */
+    .cp-theme-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--cp-surface);
+      border: 1px solid var(--cp-border);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cp-text);
+      transition: all 0.2s;
+      padding: 0;
+    }
+
+    .cp-theme-btn:hover {
+      border-color: var(--cp-red);
+      color: var(--cp-red);
+    }
+
+    .cp-theme-btn svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .cp-sun {
+      display: none;
+    }
+
+    .chale-panel.light-theme .cp-sun {
+      display: block;
+    }
+
+    .chale-panel.light-theme .cp-moon {
+      display: none;
+    }
+
+    /* Close button */
+    .cp-close-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--cp-surface);
+      border: 1px solid var(--cp-border);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cp-muted);
+      transition: all 0.2s;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .cp-close-btn:hover {
+      border-color: var(--cp-red);
+      color: var(--cp-red);
+      background: var(--cp-surface2);
+    }
+
+    /* Messages */
+    .cp-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      scroll-behavior: smooth;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cp-messages::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .cp-messages::-webkit-scrollbar-thumb {
+      background: var(--cp-border);
+      border-radius: 2px;
+    }
+
+    /* Welcome state */
+    .cp-welcome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 10px;
+      text-align: center;
+      padding: 32px 20px;
+      animation: cp-fade-up 0.45s ease forwards;
+    }
+
+    @keyframes cp-fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cp-welcome-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      letter-spacing: -0.6px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .cp-welcome-logo .w {
+      color: var(--cp-logo-w);
+      transition: color 0.25s;
+    }
+
+    .cp-welcome-logo .r {
+      color: var(--cp-red);
+    }
+
+    .cp-welcome-sub {
+      font-size: 14px;
+      color: var(--cp-sub);
+      font-weight: 400;
+      transition: color 0.25s;
+    }
+
+    .cp-welcome-desc {
+      color: var(--cp-muted);
+      font-size: 12.5px;
+      max-width: 280px;
+      line-height: 1.7;
+      margin-top: 4px;
+    }
+
+    /* Message bubbles */
+    .cp-msg {
+      display: flex;
+      gap: 10px;
+      max-width: 100%;
+      animation: cp-msg-in 0.22s ease forwards;
+    }
+
+    @keyframes cp-msg-in {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cp-msg.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .cp-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .cp-avatar.ai {
+      background: var(--cp-red);
+      color: #fff;
+    }
+
+    .cp-avatar.user {
+      background: var(--cp-surface2);
+      border: 1px solid var(--cp-border);
+      color: var(--cp-muted);
+    }
+
+    .cp-bubble-wrap {
+      max-width: calc(100% - 40px);
+    }
+
+    .cp-sender {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--cp-label);
+      letter-spacing: 0.4px;
+      margin-bottom: 3px;
+    }
+
+    .cp-bubble {
+      padding: 10px 14px;
+      border-radius: 11px;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .cp-msg.ai .cp-bubble {
+      background: var(--cp-surface);
+      border: 1px solid var(--cp-border);
+      border-top-left-radius: 3px;
+      color: var(--cp-text);
+    }
+
+    .cp-msg.user .cp-bubble {
+      background: var(--cp-user-bg);
+      border: 1px solid var(--cp-user-border);
+      border-top-right-radius: 3px;
+      color: var(--cp-text);
+    }
+
+    .cp-time {
+      font-size: 10px;
+      color: var(--cp-muted);
+      margin-top: 4px;
+    }
+
+    .cp-msg.user .cp-time {
+      text-align: right;
+    }
+
+    /* Typing dots */
+    .cp-typing {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      padding: 12px 14px;
+    }
+
+    .cp-typing span {
+      width: 5px;
+      height: 5px;
+      background: var(--cp-muted);
+      border-radius: 50%;
+      animation: cp-tdot 1.2s ease-in-out infinite;
+    }
+
+    .cp-typing span:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .cp-typing span:nth-child(3) {
+      animation-delay: 0.30s;
+    }
+
+    @keyframes cp-tdot {
+
+      0%,
+      60%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.35;
+      }
+
+      30% {
+        transform: translateY(-5px);
+        opacity: 1;
+      }
+    }
+
+    /* Input area */
+    .cp-input-area {
+      padding: 12px 16px 16px;
+      border-top: 1px solid var(--cp-border);
+      background: var(--cp-input-bg);
+      backdrop-filter: blur(20px);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .cp-input-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      background: var(--cp-surface);
+      border: 1px solid var(--cp-border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.25s;
+    }
+
+    .cp-input-wrap:focus-within {
+      border-color: rgba(229, 21, 26, 0.45);
+      box-shadow: 0 0 0 3px rgba(229, 21, 26, 0.07);
+    }
+
+    .cp-textarea {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--cp-text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      resize: none;
+      max-height: 100px;
+      min-height: 20px;
+    }
+
+    .cp-textarea::placeholder {
+      color: var(--cp-muted);
+    }
+
+    .cp-send {
+      width: 32px;
+      height: 32px;
+      background: var(--cp-red);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cp-send:hover {
+      background: var(--cp-red-dim);
+      transform: scale(1.05);
+    }
+
+    .cp-send:active {
+      transform: scale(0.96);
+    }
+
+    .cp-hint {
+      font-size: 10px;
+      color: var(--cp-muted);
+      text-align: center;
+      margin-top: 7px;
+    }
+
+    /* New chat link */
+    .cp-new-chat {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--cp-red);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      padding: 0;
+      opacity: 0.8;
+      transition: opacity 0.15s;
+    }
+
+    .cp-new-chat:hover {
+      opacity: 1;
+    }
+
+    /* Mobile */
+    /* @media (max-width: 520px) {
+      .chale-panel {
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 88vh;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .chale-fab {
+        bottom: 20px;
+        right: 20px;
+      }
+    } */
+
+    @media (max-width: 520px) {
+      .chale-panel {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+
+        width: auto;
+        height: calc(100vh - 24px);
+
+        border-radius: 20px;
+      }
+
+      .chale-fab {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+
+  <!-- ========== Backdrop ========== -->
+  <div class="chale-backdrop" id="chaleBackdrop" onclick="chaleClose()"></div>
+
+  <!-- ========== Chale Chat Panel ========== -->
+  <div class="chale-panel" id="chalePanel">
+
+    <!-- Header -->
+    <div class="cp-header">
+      <div class="cp-brand">
+        <span class="cp-brand-w">Project</span><span class="cp-brand-r">OneX</span>
+      </div>
+      <div class="cp-badge">
+        <div class="cp-dot"></div>
+        Chale · Xplorer analyst
+      </div>
+      <div class="cp-header-actions">
+        <button class="cp-new-chat" onclick="cpNewChat()" title="New chat">
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+            <path d="M5.5 1v9M1 5.5h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          New
+        </button>
+        <button class="cp-theme-btn" onclick="cpToggleTheme()" title="Toggle theme">
+          <svg class="cp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="cp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+        <button class="cp-close-btn" onclick="chaleClose()" title="Close">&#x2715;</button>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="cp-messages" id="cpMessages">
+      <div class="cp-welcome" id="cpWelcome">
+        <div class="cp-welcome-logo">
+          <span class="w">Project</span><span class="r">OneX</span>
+        </div>
+        <div class="cp-welcome-sub">Meet Chale, your Xplorer data analyst.</div>
+        <div class="cp-welcome-desc">Ask me anything about your CX data. I'll dig in and give you the answers you need.
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="cp-input-area">
+      <div class="cp-input-wrap">
+        <textarea class="cp-textarea" id="cpInput" placeholder="Ask Chale anything about your data..." rows="1"
+          onkeydown="cpHandleKey(event)" oninput="cpAutoResize(this)">
+      </textarea>
+        <button class="cp-send" onclick="cpSend()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7L2 2l2.2 5L2 12l10-5z" fill="white" />
+          </svg>
+        </button>
+      </div>
+      <div class="cp-hint">Chale may make errors — always verify critical decisions.</div>
+    </div>
+  </div>
+
+  <!-- ========== Floating Action Button ========== -->
+  <div class="chale-fab" id="chaleFab" onclick="chaleToggle()">
+    <div class="chale-ring"></div>
+    <div class="chale-ring"></div>
+    <button class="chale-btn" aria-label="Open Chale chatbot">
+      <div class="chale-notif" id="chaleNotif">1</div>
+
+      <!-- Chat icon -->
+      <svg class="chale-icon-chat" width="26" height="26" viewBox="0 0 26 26" fill="none">
+        <path
+          d="M13 3C7.477 3 3 7.029 3 12c0 2.486 1.07 4.735 2.81 6.338V21.5l3.5-1.75A11.5 11.5 0 0013 21c5.523 0 10-4.029 10-9S18.523 3 13 3z"
+          fill="white" />
+        <circle cx="9" cy="12" r="1.3" fill="#b22810" />
+        <circle cx="13" cy="12" r="1.3" fill="#b22810" />
+        <circle cx="17" cy="12" r="1.3" fill="#b22810" />
+      </svg>
+
+      <!-- Close icon -->
+      <svg class="chale-icon-close" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M15 5L5 15M5 5l10 10" stroke="white" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+    <div class="chale-label">Chat with Chale</div>
+  </div>
+
+  <!-- ========== Chale Widget Script ========== -->
+  <script>
+    (function () {
+      const WEBHOOK = 'https://tommynexx.app.n8n.cloud/webhook/535c5f49-7176-45d3-8bfa-ed17bb386efa';
+      let cpHistory = [];
+      let cpIsOpen = false;
+
+      /* ── Session ID ── */
+      function cpSession() {
+        if (!sessionStorage.getItem('cp_sid')) {
+          sessionStorage.setItem('cp_sid', 'cp_' + Math.random().toString(36).substr(2, 9));
+        }
+        return sessionStorage.getItem('cp_sid');
+      }
+
+      /* ── Open / Close ── */
+      window.chaleToggle = function () {
+        cpIsOpen ? chaleClose() : chaleOpen();
+      };
+
+      window.chaleOpen = function () {
+        cpIsOpen = true;
+        document.getElementById('chalePanel').classList.add('open');
+        document.getElementById('chaleBackdrop').classList.add('open');
+        document.getElementById('chaleFab').classList.add('chale-widget-open');
+        document.getElementById('chaleNotif').classList.add('hidden');
+        document.getElementById('cpInput').focus();
+      };
+
+      window.chaleClose = function () {
+        cpIsOpen = false;
+        document.getElementById('chalePanel').classList.remove('open');
+        document.getElementById('chaleBackdrop').classList.remove('open');
+        document.getElementById('chaleFab').classList.remove('chale-widget-open');
+      };
+
+      /* ── Theme sync ── */
+      window.cpToggleTheme = function () {
+        document.getElementById('chalePanel').classList.toggle('light-theme');
+      };
+
+      /* Sync with host page theme button on load */
+      document.addEventListener('DOMContentLoaded', function () {
+        var hostThemeBtn = document.querySelector('.theme-btn');
+        if (hostThemeBtn) {
+          var observer = new MutationObserver(function () {
+            var isLight = document.body.classList.contains('light-theme') ||
+              document.documentElement.getAttribute('data-theme') === 'light';
+            var panel = document.getElementById('chalePanel');
+            if (panel) panel.classList.toggle('light-theme', isLight);
+          });
+          observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+          observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        }
+      });
+
+      /* ── New chat ── */
+      window.cpNewChat = function () {
+        cpHistory = [];
+        document.getElementById('cpMessages').innerHTML =
+          '<div class="cp-welcome" id="cpWelcome">' +
+          '<div class="cp-welcome-logo"><span class="w">Project</span><span class="r">OneX</span></div>' +
+          '<div class="cp-welcome-sub">Meet Chale, your Xplorer data analyst.</div>' +
+          '<div class="cp-welcome-desc">Ask me anything about your CX data. I\'ll dig in and give you the answers you need.</div>' +
+          '</div>';
+      };
+
+      /* ── Input helpers ── */
+      window.cpAutoResize = function (el) {
+        el.style.height = 'auto';
+        el.style.height = Math.min(el.scrollHeight, 100) + 'px';
+      };
+
+      window.cpHandleKey = function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); cpSend(); }
+      };
+
+      function cpTime() {
+        return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+
+      /* ── Add message ── */
+      function cpAddMsg(role, text) {
+        var welcome = document.getElementById('cpWelcome');
+        if (welcome) welcome.remove();
+
+        var msgs = document.getElementById('cpMessages');
+        var isUser = role === 'user';
+        var d = document.createElement('div');
+        d.className = 'cp-msg ' + role;
+        d.innerHTML =
+          '<div class="cp-avatar ' + role + '">' + (isUser ? 'You' : '1X') + '</div>' +
+          '<div class="cp-bubble-wrap">' +
+          (!isUser ? '<div class="cp-sender">Chale</div>' : '') +
+          '<div class="cp-bubble">' + text.replace(/\n/g, '<br>') + '</div>' +
+          '<div class="cp-time">' + cpTime() + '</div>' +
+          '</div>';
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+
+      /* ── Typing indicator ── */
+      function cpShowTyping() {
+        var welcome = document.getElementById('cpWelcome');
+        if (welcome) welcome.remove();
+        var msgs = document.getElementById('cpMessages');
+        var d = document.createElement('div');
+        d.className = 'cp-msg ai';
+        d.id = 'cpTyping';
+        d.innerHTML =
+          '<div class="cp-avatar ai">1X</div>' +
+          '<div class="cp-bubble-wrap">' +
+          '<div class="cp-sender">Chale</div>' +
+          '<div class="cp-bubble"><div class="cp-typing"><span></span><span></span><span></span></div></div>' +
+          '</div>';
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+
+      function cpRemoveTyping() {
+        var t = document.getElementById('cpTyping');
+        if (t) t.remove();
+      }
+
+      /* ── Send message ── */
+      window.cpSend = async function () {
+        var input = document.getElementById('cpInput');
+        var text = input.value.trim();
+        if (!text) return;
+
+        input.value = '';
+        input.style.height = 'auto';
+
+        cpAddMsg('user', text);
+        cpHistory.push({ role: 'user', content: text });
+        cpShowTyping();
+
+        try {
+          var res = await fetch(WEBHOOK, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text, history: cpHistory, sessionId: cpSession() })
+          });
+          var data = await res.json();
+          var reply = data.reply || data.message || data.output || 'Got it — let me look into that.';
+          cpRemoveTyping();
+          cpAddMsg('ai', reply);
+          cpHistory.push({ role: 'assistant', content: reply });
+        } catch (err) {
+          cpRemoveTyping();
+          var fallback = 'Please reach out to oga charles to provide this for you, as this is out of my scope for now.';
+          cpAddMsg('ai', fallback);
+          cpHistory.push({ role: 'assistant', content: fallback });
+        }
+      };
+
+      /* ── Keyboard: Escape closes ── */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && cpIsOpen) chaleClose();
+      });
+
+    })();
+  </script>
+
+</body>
+
+</html>
